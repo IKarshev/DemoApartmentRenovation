@@ -1760,6 +1760,11 @@ ul, ol {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.privacy-link{
+  display: inline-block;
+  white-space: nowrap;
+  margin-bottom: 7px;
+}
 .footer__bottom .left a:hover {
   color: #FFDC60;
 }

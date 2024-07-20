@@ -1,0 +1,1 @@
+<a href="mailto:picugin365@mail.ru" class="footer__email">picugin365@mail.ru</a>

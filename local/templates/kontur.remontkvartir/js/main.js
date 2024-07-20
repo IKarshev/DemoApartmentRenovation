@@ -1,4 +1,6 @@
 $(function(){
+    new WOW().init();
+
     $('.header__navbar .item').click(function(){
         var target = $(this).attr('href');
         $('html, body').animate({scrollTop: $(target).offset().top}, 800);
@@ -100,6 +102,63 @@ $(function(){
         
         });
         
+        });
+    };
+
+    $('.banner__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        speed: 1000,
+        fade: true,
+    });
+    $('.reviews_slider__wrap').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        speed: 1000,
+    });
+    $('.stock__box').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+        responsive: [
+            {
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 1,
+                dots: false,
+            }
+            }
+        ]
+    });
+    $('.our_work__slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+        speed: 1000,
+    });
+    
+    if (window.innerWidth < 1000) {
+        $('.our_work__grid').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
+        });
+        $('.reviews__box').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
         });
     };
 });

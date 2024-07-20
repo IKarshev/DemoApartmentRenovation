@@ -98,7 +98,7 @@
         </div>
     </div>
 </section>
-<section class="advantages" id="section1">
+<section class="advantages" id="about-company">
     <div class="container">
         <div class="advantages__box">
             <div class="advantages__block wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0s">
@@ -240,7 +240,7 @@
         </div>
     </div>
 </section>
-<section class="services" id="section2">
+<section class="services" id="services">
     <div class="container">
         <div class="title_h2">
             <p class="h2 center">Услуги</p>
@@ -306,7 +306,7 @@
         </div>
     </div>
 </section>
-<section class="services" id="section3">
+<section class="services" id="design-project">
     <div class="container">
         <div class="title_h2">
             <p class="h2 center">Дизайн проект</p>
@@ -369,7 +369,7 @@
         </div>
     </div>
 </section>
-<section class="our_work wow fadeIn" id="section4" data-wow-duration="1s" data-wow-delay="0.2s">
+<section class="our_work wow fadeIn" id="our-works" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="container">
         <div class="title_h2">
             <p class="h2 center">Наши работы</p>
@@ -571,7 +571,7 @@
         
     </div>
 </section>
-<section class="reviews wow fadeIn" id="section5" data-wow-duration="1s" data-wow-delay="0.2s">
+<section class="reviews wow fadeIn" id="reviews" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="container">
         <div class="title_h2">
             <p class="h2 center">Отзывы наших клиентов</p>
@@ -598,7 +598,7 @@
         </div>
     </div>
 </section>
-<section class="stock wow fadeIn" id="section6" data-wow-duration="1s" data-wow-delay="0.2s">
+<section class="stock wow fadeIn" id="sales" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="container">
         <div class="title_h2">
             <p class="h2 center">Акции</p>
