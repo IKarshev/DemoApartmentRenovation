@@ -1,103 +1,61 @@
-<section class="banner">
-    <div class="banner__slider">
-        <div class="banner__wrap">
-            <div class="banner__block">
-                <div class="content">
-                    <div class="container">
-                        <div class="wrap">
-                            <p class="banner__h1 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">Ремонт помещений в Новосибирске</p>
-                            <p class="banner__text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Теперь возможно без предоплаты по ценам частных бригад</p>
-                            <div class="banner__btns wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-                                <button class="banner__call open_modal">Заказать звонок</button>
-                                <a href="#list" class="banner__list">
-                                    Прайс лист
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="9" viewBox="0 0 21 9" fill="none">
-                                        <path d="M20.8536 4.14645C21.0488 4.34171 21.0488 4.65829 20.8536 4.85355L17.6716 8.03553C17.4763 8.2308 17.1597 8.2308 16.9645 8.03553C16.7692 7.84027 16.7692 7.52369 16.9645 7.32843L19.7929 4.5L16.9645 1.67157C16.7692 1.47631 16.7692 1.15973 16.9645 0.964466C17.1597 0.769204 17.4763 0.769204 17.6716 0.964466L20.8536 4.14645ZM0.5 5C0.223858 5 0 4.77614 0 4.5C0 4.22386 0.223858 4 0.5 4V5ZM20.5 5H0.5V4H20.5V5Z" fill="#4E433D"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="img wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                    <img src="img/services1.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="banner__wrap">
-            <div class="banner__block">
-                <div class="content">
-                    <div class="container">
-                        <div class="wrap">
-                            <p class="banner__h1">Ремонт помещений в Новосибирске</p>
-                            <p class="banner__text">Теперь возможно без предоплаты по ценам частных бригад</p>
-                            <div class="banner__btns">
-                                <button class="banner__call open_modal">Заказать звонок</button>
-                                <a href="#list" class="banner__list">
-                                    Прайс лист
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="9" viewBox="0 0 21 9" fill="none">
-                                        <path d="M20.8536 4.14645C21.0488 4.34171 21.0488 4.65829 20.8536 4.85355L17.6716 8.03553C17.4763 8.2308 17.1597 8.2308 16.9645 8.03553C16.7692 7.84027 16.7692 7.52369 16.9645 7.32843L19.7929 4.5L16.9645 1.67157C16.7692 1.47631 16.7692 1.15973 16.9645 0.964466C17.1597 0.769204 17.4763 0.769204 17.6716 0.964466L20.8536 4.14645ZM0.5 5C0.223858 5 0 4.77614 0 4.5C0 4.22386 0.223858 4 0.5 4V5ZM20.5 5H0.5V4H20.5V5Z" fill="#4E433D"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="img">
-                    <img src="img/services2.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="banner__wrap">
-            <div class="banner__block">
-                <div class="content">
-                    <div class="container">
-                        <div class="wrap">
-                            <p class="banner__h1">Ремонт помещений в Новосибирске</p>
-                            <p class="banner__text">Теперь возможно без предоплаты по ценам частных бригад</p>
-                            <div class="banner__btns">
-                                <button class="banner__call open_modal">Заказать звонок</button>
-                                <a href="#list" class="banner__list">
-                                    Прайс лист
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="9" viewBox="0 0 21 9" fill="none">
-                                        <path d="M20.8536 4.14645C21.0488 4.34171 21.0488 4.65829 20.8536 4.85355L17.6716 8.03553C17.4763 8.2308 17.1597 8.2308 16.9645 8.03553C16.7692 7.84027 16.7692 7.52369 16.9645 7.32843L19.7929 4.5L16.9645 1.67157C16.7692 1.47631 16.7692 1.15973 16.9645 0.964466C17.1597 0.769204 17.4763 0.769204 17.6716 0.964466L20.8536 4.14645ZM0.5 5C0.223858 5 0 4.77614 0 4.5C0 4.22386 0.223858 4 0.5 4V5ZM20.5 5H0.5V4H20.5V5Z" fill="#4E433D"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="img">
-                    <img src="img/services1.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="banner__wrap">
-            <div class="banner__block">
-                <div class="content">
-                    <div class="container">
-                        <div class="wrap">
-                            <p class="banner__h1">Ремонт помещений в Новосибирске</p>
-                            <p class="banner__text">Теперь возможно без предоплаты по ценам частных бригад</p>
-                            <div class="banner__btns">
-                                <button class="banner__call open_modal">Заказать звонок</button>
-                                <a href="#list" class="banner__list">
-                                    Прайс лист
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="9" viewBox="0 0 21 9" fill="none">
-                                        <path d="M20.8536 4.14645C21.0488 4.34171 21.0488 4.65829 20.8536 4.85355L17.6716 8.03553C17.4763 8.2308 17.1597 8.2308 16.9645 8.03553C16.7692 7.84027 16.7692 7.52369 16.9645 7.32843L19.7929 4.5L16.9645 1.67157C16.7692 1.47631 16.7692 1.15973 16.9645 0.964466C17.1597 0.769204 17.4763 0.769204 17.6716 0.964466L20.8536 4.14645ZM0.5 5C0.223858 5 0 4.77614 0 4.5C0 4.22386 0.223858 4 0.5 4V5ZM20.5 5H0.5V4H20.5V5Z" fill="#4E433D"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="img">
-                    <img src="img/banner.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"main_slider",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "1",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array("", ""),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+
 <section class="advantages" id="about-company">
     <div class="container">
         <div class="advantages__box">

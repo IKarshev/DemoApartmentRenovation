@@ -1,0 +1,53 @@
+.banner .slick-prev, .banner .slick-next {
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    z-index: 10;
+    top: auto;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    left: 40%;
+}
+.banner .slick-prev {
+    border-right: 0.5px solid #f5f5f5;
+    background: #FFFFFF url('./img/left.svg') no-repeat center;
+}
+
+.banner .slick-next {
+    right: auto;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    background: #FFFFFF url('./img/right.svg') no-repeat center;
+}
+.banner .slick-next:hover {
+    background: #FFDC60 url('./img/right.svg') no-repeat center;
+}
+
+.banner .slick-prev::before, .banner .slick-next::before {
+    display: none;
+}
+.banner .slick-prev:hover {
+    background: #FFDC60 url('./img/left.svg') no-repeat center;
+}
+
+@media screen and (max-width: 1600px) {
+    .banner .slick-prev, .banner .slick-next {
+        left: 47%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .banner .slick-prev, .banner .slick-next {
+        width: 50px;
+        height: 50px;
+        left: auto;
+        -webkit-transform: translate(0);
+                transform: translate(0);
+        bottom: 0;
+    }
+    .banner .slick-prev,
+    .banner .slick-next {
+        left: 26px;
+    }
+}
