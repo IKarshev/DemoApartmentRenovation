@@ -226,72 +226,137 @@
     </div>
 </section>
 
-<section class="services" id="services">
-    <div class="container">
-        <div class="title_h2">
-            <p class="h2 center">Услуги</p>
-        </div>
-        <div class="services__box">
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="img">
-                    <img src="img/services1.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 2 390р/кв.м <span class="day">7 дней</span></p>
-                    <p class="title">Косметический ремонт</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">предпродажной подготовки</li>
-                        <li class="li">сдачи в аренду</li>
-                        <li class="li">обновления ремонта</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="img">
-                    <img src="img/services2.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 4 190р/кв.м <span class="day">14 дней</span></p>
-                    <p class="title">Капитальный ремонт</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">ремонта новостроек</li>
-                        <li class="li">полного преображения квартиры</li>
-                        <li class="li">ремонта коттеджа</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="img">
-                    <img src="img/services3.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 5 990р/кв.м <span class="day">21 день</span></p>
-                    <p class="title">Эксклюзивный ремонт</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">авторского дизайна</li>
-                        <li class="li">нестандартных решений</li>
-                        <li class="li">роскошной жизни</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"services", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "4",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "EXECUTION_TIME",
+			1 => "RECOMMENDATIONS",
+			2 => "PRICE",
+			3 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "services"
+	),
+	false
+);?>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"design-project",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+            0 => "EXECUTION_TIME",
+			1 => "RECOMMENDATIONS",
+			2 => "PRICE",
+			3 => "",
+        ),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+<?/*
 <section class="services" id="design-project">
     <div class="container">
         <div class="title_h2">
@@ -355,6 +420,8 @@
         </div>
     </div>
 </section>
+*/?>
+
 <section class="our_work wow fadeIn" id="our-works" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="container">
         <div class="title_h2">
