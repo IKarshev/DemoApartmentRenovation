@@ -1,17 +1,11 @@
 $(function(){
     new WOW().init();
 
-    $('.header__navbar .item').click(function(){
+    $('.header__navbar .item, .banner__list').click(function(){
         var target = $(this).attr('href');
         $('html, body').animate({scrollTop: $(target).offset().top}, 800);
         return false; 
     });
-    $('.banner__list').click(function(){
-        var target = $(this).attr('href');
-        $('html, body').animate({scrollTop: $(target).offset().top}, 800);
-        return false; 
-    });
-
 
     $(".header__burgir").click(function() {
         $(".header__wrap").toggleClass("open");

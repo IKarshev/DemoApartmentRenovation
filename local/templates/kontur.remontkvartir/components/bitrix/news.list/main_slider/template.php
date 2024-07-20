@@ -2,8 +2,11 @@
     <section class="banner">
         <div class="banner__slider">
             
-            <?foreach ($arResult['ITEMS'] as $arkey => $arItem):?>
-                <div class="banner__wrap">
+            <?foreach ($arResult['ITEMS'] as $arkey => $arItem):
+                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $arItem["EDIT_LINK_TEXT"]);
+                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], $arItem["DELETE_LINK_TEXT"], array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                ?>
+                <div class="banner__wrap" id="<?=$this->GetEditAreaID($arItem['ID'])?>">
                     <div class="banner__block">
                         <div class="content">
                             <div class="container">
