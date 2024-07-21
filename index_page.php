@@ -551,11 +551,17 @@
     <section class="consultation">
         <div class="consultation__box">
             <div class="consultation__left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="title">Получите консультацию</p>
-                <ul class="ul">
-                    <li class="li">По реализации вашего дизайна и организации планировки</li>
-                    <li class="li">Выслушаем все идеи, пожелания и изучим референсы</li>
-                </ul>
+                
+                <?$APPLICATION->IncludeFile(
+                    '/include/consultation_text.php',
+                    [],
+                    [
+                        'MODE'      => 'html',
+                        'NAME'      => 'Текст',
+                        'TEMPLATE'  => 'page_inc.php'
+                    ]
+                );?>
+
             </div>
             <div class="consultation__form wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                 <div class="input">
@@ -572,65 +578,79 @@
                     При нажатии на кнопку “отправить” я принимаю условия <a href="#">пользовательского соглашения</a>
                 </p>
             </div>
-            <img src="img/iphone.png" alt="" class="iphone">
+            <img src="<?=SITE_TEMPLATE_PATH?>/images/iphone.png" alt="" class="iphone">
         </div>
     </section>
 </div>
-<section class="reviews_slider wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-    <div class="title_h2">
-        <p class="h2 center">Отзывы</p>
-    </div>
-    <div class="reviews_slider__wrap">
-        <div class="reviews_slider__block">
-            <div class="wrap">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-                        <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="#FFDC60"/>
-                    </svg>
-                </div>
-                <p class="date">12 августа 2020</p>
-                <p class="name">Елена Иванова</p>
-                <p class="text">Как уже неоднократно упомянуто, стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов?</p>
-            </div>
-        </div>
-        <div class="reviews_slider__block">
-            <div class="wrap">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-                        <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="#FFDC60"/>
-                    </svg>
-                </div>
-                <p class="date">12 августа 2020</p>
-                <p class="name">Елена Иванова</p>
-                <p class="text">Как уже неоднократно упомянуто, стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов?</p>
-            </div>
-        </div>
-        <div class="reviews_slider__block">
-            <div class="wrap">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-                        <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="#FFDC60"/>
-                    </svg>
-                </div>
-                <p class="date">12 августа 2020</p>
-                <p class="name">Елена Иванова</p>
-                <p class="text">Как уже неоднократно упомянуто, стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов?</p>
-            </div>
-        </div>
-        <div class="reviews_slider__block">
-            <div class="wrap">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-                        <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="#FFDC60"/>
-                    </svg>
-                </div>
-                <p class="date">12 августа 2020</p>
-                <p class="name">Елена Иванова</p>
-                <p class="text">Как уже неоднократно упомянуто, стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть указаны как претенденты на роль ключевых факторов?</p>
-            </div>
-        </div>
-    </div>
-</section>
+
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"reviews", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "j F Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "DATE_ACTIVE_FROM",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "9",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "reviews"
+	),
+	false
+);?>
+
+
 <section class="lists" id="list">
     <div class="container">
         <div class="lists__box">
