@@ -1172,20 +1172,15 @@ ul, ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
 }
 
 .reviews__video {
-  width: 487px;
+  width: calc( 33.333% - 20px );
   height: 274px;
-  margin-right: 29px;
-  margin-bottom: 30px;
   background-color: #000;
-}
-
-.reviews__video:nth-child(3n) {
-  margin-right: 0;
 }
 
 .paginator {
@@ -1982,7 +1977,7 @@ ul, ol {
     margin-bottom: 27px;
   }
   .reviews__video {
-    width: 370px;
+    width: calc( 50% - 15px );
     height: 208px;
   }
   .stock__block {
