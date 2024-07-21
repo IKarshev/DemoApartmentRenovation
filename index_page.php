@@ -356,274 +356,71 @@
 		"STRICT_SECTION_CHECK" => "N"
 	)
 );?>
-<?/*
-<section class="services" id="design-project">
-    <div class="container">
-        <div class="title_h2">
-            <p class="h2 center">Дизайн проект</p>
-        </div>
-        <div class="services__box">
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="img">
-                    <img src="img/services4.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 1 780р/кв.м <span class="day">7 дней</span></p>
-                    <p class="title">Эскизная проработка
-                        дизайн-проекта</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">самостоятельного ремонта</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="img">
-                    <img src="img/services5.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 2 380р/кв.м <span class="day">14 дней</span></p>
-                    <p class="title">Стандартная проработка
-                        дизайн-проекта</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">ремонта "под ключ" с авторским надзором</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-            <div class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="img">
-                    <img src="img/services6.png" alt="">
-                </div>
-                <div class="content">
-                    <p class="price">от 2 980р/кв.м <span class="day">21 день</span></p>
-                    <p class="title">Детальная проработка
-                        дизайн-проекта</p>
-                    <p class="h5">Рекомендуем для:</p>
-                    <ul class="ul">
-                        <li class="li">эксклюзивного ремонта</li>
-                    </ul>
-                </div>
-                <div class="bottom">
-                    <button class="btn open_modal">Заказать звонок</button>
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-*/?>
 
-<section class="our_work wow fadeIn" id="our-works" data-wow-duration="1s" data-wow-delay="0.2s">
-    <div class="container">
-        <div class="title_h2">
-            <p class="h2 center">Наши работы</p>
-        </div>
-        <div class="our_work__slider">
-            <div class="our_work__grid">
-                <a href="img/grid1.png" data-fancybox="gal" class="our_work__block block1">
-                    <img src="img/grid1.png" alt="">
-                </a>
-                <a href="img/grid2.png" data-fancybox="gal" class="our_work__block block2">
-                    <img src="img/grid2.png" alt="">
-                </a>
-                <a href="img/grid3.png" data-fancybox="gal" class="our_work__block block3">
-                    <img src="img/grid3.png" alt="">
-                </a>
-                <a href="img/grid4.png" data-fancybox="gal" class="our_work__block block4">
-                    <img src="img/grid4.png" alt="">
-                </a>
-                <a href="img/grid5.png" data-fancybox="gal" class="our_work__block block5">
-                    <img src="img/grid5.png" alt="">
-                </a>
-                <a href="img/grid6.png" data-fancybox="gal" class="our_work__block block6">
-                    <img src="img/grid6.png" alt="">
-                </a>
-                <a href="img/grid7.png" data-fancybox="gal" class="our_work__block block7">
-                    <img src="img/grid7.png" alt="">
-                </a>
-                <a href="img/grid8.png" data-fancybox="gal" class="our_work__block block8">
-                    <img src="img/grid8.png" alt="">
-                </a>
-                <a href="img/grid9.png" data-fancybox="gal" class="our_work__block block9">
-                    <img src="img/grid9.png" alt="">
-                </a>
-                <a href="img/grid10.png" data-fancybox="gal" class="our_work__block block10">
-                    <img src="img/grid10.png" alt="">
-                </a>
-                <a href="img/grid11.png" data-fancybox="gal" class="our_work__block block11">
-                    <img src="img/grid11.png" alt="">
-                </a>
-                <a href="img/grid12.png" data-fancybox="gal" class="our_work__block block12">
-                    <img src="img/grid12.png" alt="">
-                </a>
-            </div>
-            <div class="our_work__grid">
-                <a href="img/grid1.png" data-fancybox="gal" class="our_work__block block1">
-                    <img src="img/grid1.png" alt="">
-                </a>
-                <a href="img/grid2.png" data-fancybox="gal" class="our_work__block block2">
-                    <img src="img/grid2.png" alt="">
-                </a>
-                <a href="img/grid3.png" data-fancybox="gal" class="our_work__block block3">
-                    <img src="img/grid3.png" alt="">
-                </a>
-                <a href="img/grid4.png" data-fancybox="gal" class="our_work__block block4">
-                    <img src="img/grid4.png" alt="">
-                </a>
-                <a href="img/grid5.png" data-fancybox="gal" class="our_work__block block5">
-                    <img src="img/grid5.png" alt="">
-                </a>
-                <a href="img/grid6.png" data-fancybox="gal" class="our_work__block block6">
-                    <img src="img/grid6.png" alt="">
-                </a>
-                <a href="img/grid7.png" data-fancybox="gal" class="our_work__block block7">
-                    <img src="img/grid7.png" alt="">
-                </a>
-                <a href="img/grid8.png" data-fancybox="gal" class="our_work__block block8">
-                    <img src="img/grid8.png" alt="">
-                </a>
-                <a href="img/grid9.png" data-fancybox="gal" class="our_work__block block9">
-                    <img src="img/grid9.png" alt="">
-                </a>
-                <a href="img/grid10.png" data-fancybox="gal" class="our_work__block block10">
-                    <img src="img/grid10.png" alt="">
-                </a>
-                <a href="img/grid11.png" data-fancybox="gal" class="our_work__block block11">
-                    <img src="img/grid11.png" alt="">
-                </a>
-                <a href="img/grid12.png" data-fancybox="gal" class="our_work__block block12">
-                    <img src="img/grid12.png" alt="">
-                </a>
-            </div>
-            <div class="our_work__grid">
-                <a href="img/grid1.png" data-fancybox="gal" class="our_work__block block1">
-                    <img src="img/grid1.png" alt="">
-                </a>
-                <a href="img/grid2.png" data-fancybox="gal" class="our_work__block block2">
-                    <img src="img/grid2.png" alt="">
-                </a>
-                <a href="img/grid3.png" data-fancybox="gal" class="our_work__block block3">
-                    <img src="img/grid3.png" alt="">
-                </a>
-                <a href="img/grid4.png" data-fancybox="gal" class="our_work__block block4">
-                    <img src="img/grid4.png" alt="">
-                </a>
-                <a href="img/grid5.png" data-fancybox="gal" class="our_work__block block5">
-                    <img src="img/grid5.png" alt="">
-                </a>
-                <a href="img/grid6.png" data-fancybox="gal" class="our_work__block block6">
-                    <img src="img/grid6.png" alt="">
-                </a>
-                <a href="img/grid7.png" data-fancybox="gal" class="our_work__block block7">
-                    <img src="img/grid7.png" alt="">
-                </a>
-                <a href="img/grid8.png" data-fancybox="gal" class="our_work__block block8">
-                    <img src="img/grid8.png" alt="">
-                </a>
-                <a href="img/grid9.png" data-fancybox="gal" class="our_work__block block9">
-                    <img src="img/grid9.png" alt="">
-                </a>
-                <a href="img/grid10.png" data-fancybox="gal" class="our_work__block block10">
-                    <img src="img/grid10.png" alt="">
-                </a>
-                <a href="img/grid11.png" data-fancybox="gal" class="our_work__block block11">
-                    <img src="img/grid11.png" alt="">
-                </a>
-                <a href="img/grid12.png" data-fancybox="gal" class="our_work__block block12">
-                    <img src="img/grid12.png" alt="">
-                </a>
-            </div>
-            <div class="our_work__grid">
-                <a href="img/grid1.png" data-fancybox="gal" class="our_work__block block1">
-                    <img src="img/grid1.png" alt="">
-                </a>
-                <a href="img/grid2.png" data-fancybox="gal" class="our_work__block block2">
-                    <img src="img/grid2.png" alt="">
-                </a>
-                <a href="img/grid3.png" data-fancybox="gal" class="our_work__block block3">
-                    <img src="img/grid3.png" alt="">
-                </a>
-                <a href="img/grid4.png" data-fancybox="gal" class="our_work__block block4">
-                    <img src="img/grid4.png" alt="">
-                </a>
-                <a href="img/grid5.png" data-fancybox="gal" class="our_work__block block5">
-                    <img src="img/grid5.png" alt="">
-                </a>
-                <a href="img/grid6.png" data-fancybox="gal" class="our_work__block block6">
-                    <img src="img/grid6.png" alt="">
-                </a>
-                <a href="img/grid7.png" data-fancybox="gal" class="our_work__block block7">
-                    <img src="img/grid7.png" alt="">
-                </a>
-                <a href="img/grid8.png" data-fancybox="gal" class="our_work__block block8">
-                    <img src="img/grid8.png" alt="">
-                </a>
-                <a href="img/grid9.png" data-fancybox="gal" class="our_work__block block9">
-                    <img src="img/grid9.png" alt="">
-                </a>
-                <a href="img/grid10.png" data-fancybox="gal" class="our_work__block block10">
-                    <img src="img/grid10.png" alt="">
-                </a>
-                <a href="img/grid11.png" data-fancybox="gal" class="our_work__block block11">
-                    <img src="img/grid11.png" alt="">
-                </a>
-                <a href="img/grid12.png" data-fancybox="gal" class="our_work__block block12">
-                    <img src="img/grid12.png" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="our_work__grid_mobile">
-            <div class="our_work__grid">
-                <a href="img/grid1.png" data-fancybox="gal" class="our_work__block block1">
-                    <img src="img/grid1.png" alt="">
-                </a>
-                <a href="img/grid2.png" data-fancybox="gal" class="our_work__block block2">
-                    <img src="img/grid2.png" alt="">
-                </a>
-                <a href="img/grid3.png" data-fancybox="gal" class="our_work__block block3">
-                    <img src="img/grid3.png" alt="">
-                </a>
-                <a href="img/grid4.png" data-fancybox="gal" class="our_work__block block4">
-                    <img src="img/grid4.png" alt="">
-                </a>
-                <a href="img/grid5.png" data-fancybox="gal" class="our_work__block block5">
-                    <img src="img/grid5.png" alt="">
-                </a>
-                <a href="img/grid6.png" data-fancybox="gal" class="our_work__block block6">
-                    <img src="img/grid6.png" alt="">
-                </a>
-                <a href="img/grid7.png" data-fancybox="gal" class="our_work__block block7">
-                    <img src="img/grid7.png" alt="">
-                </a>
-                <a href="img/grid8.png" data-fancybox="gal" class="our_work__block block8">
-                    <img src="img/grid8.png" alt="">
-                </a>
-                <a href="img/grid9.png" data-fancybox="gal" class="our_work__block block9">
-                    <img src="img/grid9.png" alt="">
-                </a>
-                <a href="img/grid10.png" data-fancybox="gal" class="our_work__block block10">
-                    <img src="img/grid10.png" alt="">
-                </a>
-                <a href="img/grid11.png" data-fancybox="gal" class="our_work__block block11">
-                    <img src="img/grid11.png" alt="">
-                </a>
-                <a href="img/grid12.png" data-fancybox="gal" class="our_work__block block12">
-                    <img src="img/grid12.png" alt="">
-                </a>
-            </div>
-        </div>
-        
-    </div>
-</section>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"our_work",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "6",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+            0 => "EXECUTION_TIME",
+			1 => "RECOMMENDATIONS",
+			2 => "PRICE",
+			3 => "",
+        ),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+
+
 <section class="reviews wow fadeIn" id="reviews" data-wow-duration="1s" data-wow-delay="0.2s">
     <div class="container">
         <div class="title_h2">

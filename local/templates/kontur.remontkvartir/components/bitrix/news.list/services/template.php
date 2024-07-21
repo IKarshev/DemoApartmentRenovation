@@ -9,9 +9,10 @@
                 <?foreach ($arResult['ITEMS'] as $arkey => $arItem):
                     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $arItem["EDIT_LINK_TEXT"]);
                     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], $arItem["DELETE_LINK_TEXT"], array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));	
+                    $wow_delay = 0.2;
                     ?>
 
-                    <div id="<?=$this->GetEditAreaID($arItem['ID'])?>" class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div id="<?=$this->GetEditAreaID($arItem['ID'])?>" class="services__block wow fadeIn" data-wow-duration="1s" data-wow-delay="<?=$wow_delay?>s">
                         <div class="img">
                             <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="">
                         </div>
@@ -33,7 +34,9 @@
                         </div>
                     </div>
 
-                <?endforeach;?>
+                <?
+                $wow_delay += 0.4;
+                endforeach;?>
 
             </div>
         </div>
