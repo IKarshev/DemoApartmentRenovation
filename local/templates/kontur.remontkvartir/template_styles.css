@@ -1602,13 +1602,15 @@ ul, ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
 }
 
 .lists__block {
-  width: 487px;
+  width: calc( 33.333% - 20px );
   padding: 52px 44px 50px 44px;
   background: #FFFFFF;
-  margin-right: 29px;
 }
 .lists__block .title {
   height: 165px;
@@ -1999,9 +2001,6 @@ ul, ol {
     max-width: 970px;
     padding: 53px 70px 60px 116px;
   }
-  .lists__block {
-    width: 370px;
-  }
   .lists__block .title {
     padding-right: 20px;
     height: 99px;
@@ -2055,7 +2054,15 @@ ul, ol {
     margin-left: 35px;
   }
 }
+@media screen and (max-width: 1170px) {
+  .lists__block{
+    width: calc( 50% - 15px );
+  }
+}
 @media screen and (max-width: 768px) {
+  .services__box{
+    row-gap: 16px;
+  }
   .banner .slick-prev, .banner .slick-next {
     width: 50px;
     height: 50px;
@@ -2288,11 +2295,11 @@ ul, ol {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    row-gap: 16px;
   }
   .lists__block {
     width: 100%;
     padding: 24px 17px 10px 15px;
-    margin-bottom: 16px;
   }
   .lists__block .title {
     height: auto;
@@ -2361,7 +2368,6 @@ ul, ol {
     width: 100%;
     min-height: auto;
     margin: 0;
-    margin-bottom: 18px;
   }
   .services__block .img {
     height: 180px;
@@ -2459,9 +2465,8 @@ ul, ol {
     column-gap: 20px;
   }
   .advantages__block {
-    width: 47%;
+    width: calc(50% - 10px);
     margin: 0;
-    margin-bottom: 20px;
     padding: 28px 20px 23px 16px;
   }
   .advantages__block .icon {

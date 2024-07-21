@@ -114,7 +114,6 @@
 	)
 );?>
 
-
 <section class="company">
     <div class="company__box">
         <div class="company__left wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
@@ -583,7 +582,6 @@
     </section>
 </div>
 
-
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"reviews", 
@@ -650,70 +648,70 @@
 	false
 );?>
 
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"work-options", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "j F Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "10",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "OPTIONS",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "reviews"
+	),
+	false
+);?>
 
-<section class="lists" id="list">
-    <div class="container">
-        <div class="lists__box">
-            <div class="lists__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <p class="title">Комплексный ремонт</p>
-                <ul class="ul">
-                    <li class="li"><a href="#">Косметический ремонт</a></li>
-                    <li class="li"><a href="#">Капитальный ремонт</a></li>
-                    <li class="li"><a href="#">Эксклюзивный ремонт</a></li>
-                    <li class="li"><a href="#">Квартира</a></li>
-                    <li class="li"><a href="#">Новостройка</a></li>
-                    <li class="li"><a href="#">Студия</a></li>
-                    <li class="li"><a href="#">Апартаменты</a></li>
-                    <li class="li"><a href="#">Лофт</a></li>
-                    <li class="li"><a href="#">Пентхаус</a></li>
-                    <li class="li"><a href="#">Коттедж</a></li>
-                    <li class="li"><a href="#">Загородный дом</a></li>
-                    <li class="li"><a href="#">Офис</a></li>
-                    <li class="li"><a href="#">Нежилое помещение</a></li>
-                    <li class="li"><a href="#">Комплексный дизайн-проект</a></li>
-                </ul>
-            </div>
-            <div class="lists__block wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <p class="title">Ремонт отдельных помещений</p>
-                <ul class="ul">
-                    <li class="li"><a href="#">Ванная комната</a></li>
-                    <li class="li"><a href="#">Туалет</a></li>
-                    <li class="li"><a href="#">Жилая комната</a></li>
-                    <li class="li"><a href="#">Спальня</a></li>
-                    <li class="li"><a href="#">Кухня</a></li>
-                    <li class="li"><a href="#">Гостиная</a></li>
-                    <li class="li"><a href="#">Кабинет</a></li>
-                    <li class="li"><a href="#">Детская комната</a></li>
-                    <li class="li"><a href="#">Балкон или лоджия</a></li>
-                    <li class="li"><a href="#">Гардеробная</a></li>
-                    <li class="li"><a href="#">Прихожая</a></li>
-                    <li class="li"><a href="#">Дизайн-проект помещения</a></li>
-                </ul>
-            </div>
-            <div class="lists__block wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-                <p class="title">Мелкие ремонтные работы</p>
-                <ul class="ul">
-                    <li class="li"><a href="#">Отделка стен</a></li>
-                    <li class="li"><a href="#">Настил пола</a></li>
-                    <li class="li"><a href="#">Отделка потолка</a></li>
-                    <li class="li"><a href="#">Малярные работы</a></li>
-                    <li class="li"><a href="#">Электромонтажные работы</a></li>
-                    <li class="li"><a href="#">Сантехнические работы</a></li>
-                    <li class="li"><a href="#">Демонтажные работы</a></li>
-                    <li class="li"><a href="#">Черновая отделка</a></li>
-                    <li class="li"><a href="#">Объединение лоджии с комнатой</a></li>
-                    <li class="li"><a href="#">Межкомнатные двери</a></li>
-                    <li class="li"><a href="#">Монтаж стен и перегородок</a></li>
-                    <li class="li"><a href="#">Отопление</a></li>
-                    <li class="li"><a href="#">Водоснабжение и канализация</a></li>
-                    <li class="li"><a href="#">Вентиляция и кондиционирование</a></li>
-                    <li class="li"><a href="#">Утепление и звукоизоляция</a></li>
-                    <li class="li"><a href="#">Монтаж окон</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="map">
     <div style="position:relative;overflow:hidden;">
         <a href="https://yandex.uz/maps/65/novosibirsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новосибирск</a>
