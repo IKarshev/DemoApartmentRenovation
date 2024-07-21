@@ -1157,8 +1157,7 @@ ul, ol {
 }
 
 .our_work__block:hover img {
-  -webkit-transform: translate(-50%, -50%) scale(1.05);
-          transform: translate(-50%, -50%) scale(1.05);
+  width: 110%;
 }
 
 .reviews {
@@ -1320,21 +1319,21 @@ ul, ol {
 }
 .stock .slick-prev {
   margin-left: -213px;
-  background: #FFFFFF url(../img/left.svg) no-repeat center;
+  background: #FFFFFF url('./images/left.svg') no-repeat center;
 }
 .stock .slick-next {
   margin-left: 213px;
   right: auto;
-  background: #FFFFFF url(../img/right.svg) no-repeat center;
+  background: #FFFFFF url('./images/right.svg') no-repeat center;
 }
 .stock .slick-prev::before, .stock .slick-next::before {
   display: none;
 }
 .stock .slick-prev:hover {
-  background: #FFDC60 url(../img/left.svg) no-repeat center;
+  background: #FFDC60 url('./images/left.svg') no-repeat center;
 }
 .stock .slick-next:hover {
-  background: #FFDC60 url(../img/right.svg) no-repeat center;
+  background: #FFDC60 url('./images/right.svg') no-repeat center;
 }
 .stock .title_h2 {
   margin-bottom: 44px;

@@ -484,32 +484,69 @@
 	)
 );?>
 
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"stock",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "N",
+		"DISPLAY_PICTURE" => "N",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "8",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+            0 => "EXECUTION_TIME",
+			1 => "RECOMMENDATIONS",
+			2 => "PRICE",
+			3 => "",
+        ),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
 
-<section class="stock wow fadeIn" id="sales" data-wow-duration="1s" data-wow-delay="0.2s">
-    <div class="container">
-        <div class="title_h2">
-            <p class="h2 center">Акции</p>
-        </div>
-        <div class="stock__box">
-            <div class="stock__block">
-                <p class="title">Лист комплектации бесплатно</p>
-                <p class="text">При заказе любого ремонта анализ поставщиков и выбор минимальных цен на материалы бесплатно.</p>
-            </div>
-            <div class="stock__block">
-                <p class="title">Лист комплектации бесплатно</p>
-                <p class="text">При заказе любого ремонта анализ поставщиков и выбор минимальных цен на материалы бесплатно.</p>
-            </div>
-            <div class="stock__block">
-                <p class="title">Лист комплектации бесплатно</p>
-                <p class="text">При заказе любого ремонта анализ поставщиков и выбор минимальных цен на материалы бесплатно.</p>
-            </div>
-            <div class="stock__block">
-                <p class="title">Лист комплектации бесплатно</p>
-                <p class="text">При заказе любого ремонта анализ поставщиков и выбор минимальных цен на материалы бесплатно.</p>
-            </div>
-        </div>
-    </div>
-</section>
 <div class="consultation_wrap">
     <section class="consultation">
         <div class="consultation__box">
