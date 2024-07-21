@@ -31,6 +31,8 @@ use Bitrix\Main\Page\Asset;
         Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/main.js" );
         Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/SmoothScroll.js" );
         Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js" );
+        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.inputmask.min.js" );
+        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.validate.min.js" );
     ?>
 </head>
 <body>
@@ -98,20 +100,24 @@ use Bitrix\Main\Page\Asset;
     </div>
     <div class="modal">
         <div class="consultation__form">
-            <button class="close"></button>
-            <div class="input">
-                <input type="text" placeholder="Имя">
-            </div>
-            <div class="input">
-                <input type="text" placeholder="+7 (XXX) XXX XX XX" class="tel input_phone">
-            </div>
-            <div class="input">
-                <input type="text" placeholder="E-Mail">
-            </div>
-            <button class="btn">Отправить</button>
-            <p class="text">
-                При нажатии на кнопку “отправить” я принимаю условия <a href="#">пользовательского соглашения</a>
-            </p>
+            <div class="close"></div>
+            <?$APPLICATION->IncludeComponent(
+                "kontur:form",
+                "OrderCall",
+                Array(
+                    "ADD_FORM" => "Y",
+                    "EMAIL_MASK" => array("EMAIL"),
+                    "FORM_TITLE" => "",
+                    "IBLOCK" => "11",
+                    "IBLOCKTYPE" => "Forms",
+                    "MAIL_TEMPLATE" => "",
+                    "PHONE_MASK" => array("PHONE_NUMBER"),
+                    "POPUP" => "N",
+                    "PROPERTYS" => array("NAME","PHONE_NUMBER","EMAIL"),
+                    "SEND_MAIL" => "N",
+                    "POLICE_LINK" => '#',
+                )
+            );?>
         </div>
     </div>
     <main class="main">

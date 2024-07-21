@@ -1,0 +1,16 @@
+.form_body input[type=text].error,
+.form_body input[type=text].error::placeholder{
+    color: #ED0A34;
+    border-color: #ED0A34;
+}
+.form_body .error_placement{
+    color: #ED0A34;
+}
+.form_body .error_placement .error{
+    font-size: 12px;
+}
+.form_body button[type=submit]:disabled{
+    color: #fff;
+    background-color: #0DC268;
+    border-color: #0DC268;
+}

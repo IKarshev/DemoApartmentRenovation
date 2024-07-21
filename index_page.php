@@ -212,7 +212,7 @@
                 );?>
 
                 <div class="banner__btns wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
-                    <button class="banner__call">Консультация специалиста</button>
+                    <button class="banner__call open_modal">Консультация специалиста</button>
                     <button href=".map" class="banner__list">
                         Как нас найти
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none">
@@ -563,19 +563,23 @@
 
             </div>
             <div class="consultation__form wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="input">
-                    <input type="text" placeholder="Имя">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="+7 (XXX) XXX XX XX" class="tel input_phone">
-                </div>
-                <div class="input">
-                    <input type="text" placeholder="E-Mail">
-                </div>
-                <button class="btn">Отправить</button>
-                <p class="text">
-                    При нажатии на кнопку “отправить” я принимаю условия <a href="#">пользовательского соглашения</a>
-                </p>
+                <?$APPLICATION->IncludeComponent(
+                    "kontur:form",
+                    "OrderCall",
+                    Array(
+                        "ADD_FORM" => "Y",
+                        "EMAIL_MASK" => array("EMAIL"),
+                        "FORM_TITLE" => "",
+                        "IBLOCK" => "11",
+                        "IBLOCKTYPE" => "Forms",
+                        "MAIL_TEMPLATE" => "",
+                        "PHONE_MASK" => array("PHONE_NUMBER"),
+                        "POPUP" => "N",
+                        "PROPERTYS" => array("NAME","PHONE_NUMBER","EMAIL"),
+                        "SEND_MAIL" => "N",
+                        "POLICE_LINK" => '#',
+                    )
+                );?>
             </div>
             <img src="<?=SITE_TEMPLATE_PATH?>/images/iphone.png" alt="" class="iphone">
         </div>
@@ -710,7 +714,6 @@
 	),
 	false
 );?>
-
 
 <section class="map">
     <div style="position:relative;overflow:hidden;">
