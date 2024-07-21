@@ -1,0 +1,3 @@
+<a href="https://yandex.uz/maps/65/novosibirsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Новосибирск</a>
+<a href="https://yandex.uz/maps/65/novosibirsk/house/ulitsa_krylova_36/bEsYfwRgSkcOQFtvfXx1cXtkYg==/?ll=82.930329%2C55.040776&utm_medium=mapframe&utm_source=maps&z=17.15" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Крылова, 36 — Яндекс Карты</a>
+<iframe src="https://yandex.uz/map-widget/v1/-/CCUfuAU-9B" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
