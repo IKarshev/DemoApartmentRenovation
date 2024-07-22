@@ -12,7 +12,7 @@
                     <div class="wrap">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="17" viewBox="0 0 26 17" fill="none">
-                                <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="#FFDC60"/>
+                                <path d="M11.0901 0.538086H3.83608L0.736084 16.6581H9.60208L11.0901 0.538086ZM25.7221 0.538086H18.4681L15.3681 16.6581H24.2341L25.7221 0.538086Z" fill="var(--color-primary)"/>
                             </svg>
                         </div>
                         <p class="date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></p>
