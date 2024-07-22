@@ -3,7 +3,7 @@ $(function(){
 
     $('.header__navbar .item, .banner__list').click(function(){
         var target = $(this).attr('href');
-        $('html, body').animate({scrollTop: $(target).offset().top}, 800);
+        $('html, body').animate({scrollTop: $(target).offset().top - $('.header.fixed').height() - 20}, 800);
         return false; 
     });
 

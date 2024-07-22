@@ -1,6 +1,20 @@
-    <?if( !CSite::InDir('/index.php') ):?>
-        </div>
-    <?endif;?>
+        <section class="map">
+            <div style="position:relative;overflow:hidden;">
+                <?$APPLICATION->IncludeFile(
+                    '/include/map_widget.php',
+                    [],
+                    [
+                        'MODE'      => 'php',
+                        'NAME'      => 'Виджет карты',
+                        'TEMPLATE'  => 'page_inc.php'
+                    ]
+                );?>
+            </div>
+        </section>
+        
+        <?if( !CSite::InDir('/index.php') ):?>
+            </div>
+        <?endif;?>
     </main>
    
     <button class="besamogas"></button>
