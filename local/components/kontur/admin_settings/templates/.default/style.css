@@ -1,0 +1,53 @@
+.settigs-container {
+  width: 100%;
+  background-color: #fff;
+}
+
+#Kontur-Core-Settings {
+  padding: 25px 40px;
+  max-width: 400px;
+}
+#Kontur-Core-Settings .input-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.0509803922);
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 10px 50px 10px 25px;
+  background-color: #fff;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item:first-child {
+  border-radius: 4px 4px 0 0;
+  border-top: 1px solid #e3e3e3;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .count {
+  display: block;
+  box-sizing: border-box;
+  padding-right: 30px;
+  max-width: 34px;
+  font-weight: 600;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .activity {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

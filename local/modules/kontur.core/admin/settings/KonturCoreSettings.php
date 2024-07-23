@@ -13,7 +13,69 @@ use konturCore\Helper;
 Loader::includeModule('kontur.core');
 
 $APPLICATION->SetTitle( Loc::getMessage('GLOBAL_MENU_TAB_NAME') );
+CJSCore::Init(array("jquery"));
 ?>
 
+<?$APPLICATION->IncludeComponent(
+	"kontur:admin_settings",
+	"",
+	Array(
+		"SETTINGS" => [
+
+            "LANDING_BLOCK_ORDER" => [
+                "NAME" => 'Порядок блоков на главной странице',
+                "CODE" => 'LANDING_BLOCK_ORDER',
+                "TYPE" => 'DRAG',
+                "VALUES" => [
+                    [
+                        "NAME" => "Большой слайдер",
+                        "CODE" => "BIG_SLIDER",
+                    ],
+                    [
+                        "NAME" => "Преиимущества",
+                        "CODE" => "ADVANTAGES",
+                    ],
+                    [
+                        "NAME" => "О компании",
+                        "CODE" => "ABOUT_COMPANY",
+                    ],
+                    [
+                        "NAME" => "Услуги",
+                        "CODE" => "SERVICES",
+                    ],
+                    [
+                        "NAME" => "Дизайн проект",
+                        "CODE" => "DESIGN_PROJECT",
+                    ],
+                    [
+                        "NAME" => "Наши работы",
+                        "CODE" => "OUT_WORKS",
+                    ],
+                    [
+                        "NAME" => "Видео отзывы",
+                        "CODE" => "VIDEO_REVIEWS",
+                    ],
+                    [
+                        "NAME" => "Акции",
+                        "CODE" => "SALES",
+                    ],
+                    [
+                        "NAME" => "Блок обратной связи",
+                        "CODE" => "FEEDBACK",
+                    ],
+                    [
+                        "NAME" => "Отзывы",
+                        "CODE" => "REVIEWS",
+                    ],
+                    [
+                        "NAME" => "Варианты работ",
+                        "CODE" => "WORK_OPTIONS",
+                    ],
+                ],
+            ],
+
+        ],
+	)
+);?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php");?>

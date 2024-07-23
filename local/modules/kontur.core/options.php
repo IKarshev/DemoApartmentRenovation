@@ -9,7 +9,7 @@ $request = HttpApplication::getInstance()->getContext()->getRequest();
 $module_id = htmlspecialcharsbx($request["mid"] != "" ? $request["mid"] : $request["id"]);
 \Bitrix\Main\Loader::includeModule($module_id);
 
-$Options = Options();
+$Options = new Options();
 if ( $request->isPost() ){//save settings
     $Options->save_option( $_POST );
 };
