@@ -12,54 +12,55 @@ use \Bitrix\Main\Application;
 use \Bitrix\Iblock\SectionTable;
 use \Bitrix\Iblock\ElementTable;
 use \Bitrix\Iblock\PropertyTable;
-session_start();
+
+use konturCore\Orm\SettingsOrderFieldTable;
 
 Loader::includeModule('iblock');
+Loader::includeModule('kontur.core');
 
 class KonturAdminSettings extends CBitrixComponent implements Controllerable{
 
-    public function randomString($length = 8) { 
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
-        $charactersLength = strlen($characters); 
-        $randomString = ''; 
-        for ($i = 0; $i < $length; $i++) { 
-            $randomString .= $characters[rand(0, $charactersLength - 1)]; 
-        } 
-        return $randomString; 
-    }
-
-    public function generate_form_id($form_prefix) {
-        $this->form_postfix = $this->randomString();
-        $this->form_id = $form_prefix."_".$this->form_postfix;
-        
-        return $this->form_id;
-    }
-
-    public function validate_string($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
     public function configureActions(){
         // сбрасываем фильтры по-умолчанию
-        return [
-            'SaveSettings' => [
-                'prefilters' => [],
-                'postfilters' => []
-            ]
-        ];
+        return [];
+    }
+
+    /**
+     * Сохраняем данные формы
+     */
+    public function saveSettings(){
+
+        if( !empty($_REQUEST) ){
+            foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
+                foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
+                    if( strpos($ParamFieldKey, $RequestFieldKey) !== false ) continue;
+
+                    switch ($ParamFieldValue['TYPE']) {
+                        case 'DRAG':
+                            // Сохраняем настройки активности
+                            if( strpos($RequestFieldKey, '_ACTIVITY') !== false ){
+                                SettingsOrderFieldTable::ChangeActivity($RequestFieldValue, $ParamFieldKey);
+                            }
+
+                            break;
+                    }
+
+
+
+                }
+            }
+        };
+
     }
 
     public function executeComponent(){// подключение модулей (метод подключается автоматически)
         try{
+            // Сохраняем данные формы
+            $this->saveSettings();
             // Проверка подключения модулей
             $this->checkModules();
-            // Генерируем название формы
-            $this->form_id = $this->generate_form_id("AdminSettings");
             // формируем arResult
-            $this->getResult($this->form_id);
+            $this->getResult();
             // подключение шаблона компонента
             $this->includeComponentTemplate();
         }
@@ -79,32 +80,26 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
         return $arParams;
     }
 
-    protected function getResult($form_id){ // подготовка массива $arResult (метод подключается внутри класса try...catch)
-        // Формируем массив arResult
-        $this->arResult["form_id"] = $this->form_id;
-        // Передаем параметры в сессию, чтобы получить иметь доступ в ajax
-        $_SESSION['arParams'] = $this->arParams;
-  
-        $PropTypeList = array(
-            "S" => "STRING",
-            "L" => "LIST",
-            "F" => "FILE",
-            "C" => "CHECKBOX",
-            "HTML" => "TEXT_AREA",
-        );
+    protected function getResult(){ // подготовка массива $arResult (метод подключается внутри класса try...catch)
+        $this->arResult = $this->arParams;
 
+        foreach ($this->arResult['SETTINGS'] as $arkey => &$arItem) {
+            switch ($arItem['TYPE']) {
+                case 'DRAG':
+                    $AllItems = SettingsOrderFieldTable::GetPropValues($arItem['CODE']);
+                    foreach ($arItem['VALUES'] as $GragValuekey => &$GragValueItem) {
+                        // $this->arResult['SETTINGS'][$arkey]['VALUES'][$GragValuekey]['ACTIVITY']
+                        $GragValueItem['ACTIVITY'] = array_shift(array_filter($AllItems, function($value) use ($GragValueItem) {
+                            return ( $value['VALUE_CODE'] == $GragValueItem['CODE'] );
+                        }))['ACTIVITY'];
+                    }
+
+                    break;
+            }
+        };
+
+        
         return $this->arResult;
     }
-
-    public function SaveSettingsAction(){
-        $request = Application::getInstance()->getContext()->getRequest();
-        // получаем файлы, post
-        $post = $request->getPostList();
-        $files = $request->getFileList()->toArray();
-        // Получаем параметры компонента из сессии
-        $this->arParams = $_SESSION['arParams'];
-
-        return $post;
-    } 
 
 }

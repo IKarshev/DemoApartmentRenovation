@@ -8,6 +8,7 @@
   max-width: 400px;
 }
 #Kontur-Core-Settings .input-title {
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
@@ -30,6 +31,9 @@
   padding: 10px 50px 10px 25px;
   background-color: #fff;
 }
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .ghost {
+  opacity: 1;
+}
 #Kontur-Core-Settings .draggable-list-container .draggable-list-item:first-child {
   border-radius: 4px 4px 0 0;
   border-top: 1px solid #e3e3e3;
@@ -50,4 +54,24 @@
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
+}
+#Kontur-Core-Settings .button_container {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  margin-top: 42px;
+}
+#Kontur-Core-Settings .button_container button[type=submit] {
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 2px solid #2d2d2d;
+  color: #2d2d2d;
+}
+#Kontur-Core-Settings .button_container button[type=submit]:hover {
+  transition: 0.3s;
+  background-color: #2d2d2d;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

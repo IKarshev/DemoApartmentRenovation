@@ -1,7 +1,7 @@
-<?if( !empty($arParams['SETTINGS']) ):?>
+<?if( !empty($arResult['SETTINGS']) ):?>
     <div class="settigs-container">
         <form action="" id="Kontur-Core-Settings">
-            <?foreach ($arParams['SETTINGS'] as $FieldKey => $Field):?>
+            <?foreach ($arResult['SETTINGS'] as $FieldKey => $Field):?>
                 <?switch ($Field['TYPE']) {
                     case 'DRAG':?>
                         <div class="draggable-list-container">
@@ -13,15 +13,20 @@
                                     <li class="draggable-list-item" data-count="<?=$ItemValue['CODE']?>">
                                         <div class="count"><?=$ItemKey+1?></div>
                                         <div class="name"><?=$ItemValue['NAME']?></div>
-                                        <input class="activity" type="checkbox" name="<?=$ItemValue['CODE'].'_'.$ItemKey+1?>" checked>
+                                        <input class="activity" type="checkbox" name="<?=$Field['CODE']."_ACTIVITY[]"?>" value="<?=$ItemValue['CODE']?>" <?=($ItemValue['ACTIVITY']) ? 'checked' : ''?>>
                                     </li>
                                 <?endforeach;?>
-                                <input type="hidden" name="<?=$Field['CODE']?>" value='<?=json_encode($DefaultItems);?>'>
+                                <input class="SORT" type="hidden" name="<?=$Field['CODE'].'_SORT'?>" value='<?=json_encode($DefaultItems);?>'>
                             </ul>
                         </div>
                         <?break;
                 }?>
             <?endforeach;?>
+
+            <div class="button_container">
+                <button type="submit">Сохранить</button>
+            </div>
+
         </form>
     </div>
 <?endif;?>
