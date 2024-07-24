@@ -18,6 +18,7 @@ class SettingsOrderFieldTable extends Entity\DataManager{
             new Entity\StringField('PROP_CODE'),
             new Entity\StringField('VALUE_CODE'),
 			new Entity\StringField('SORT'),
+            new Entity\StringField('DEFAULT_SORT'),
             new Entity\BooleanField('ACTIVITY'),
 		);
 	}
@@ -45,11 +46,40 @@ class SettingsOrderFieldTable extends Entity\DataManager{
     public static function ChangeActivity(array $arFields, string $FieldCode)
     {
         $CurrentItems = self::GetPropValues($FieldCode);
-        $NewActivity = [];
         foreach ($CurrentItems as $arItem) {
             $activity = (in_array($arItem['VALUE_CODE'], $arFields));
             self::update( $arItem['ID'], ['ACTIVITY' => $activity] );
         };
+    }
+
+    /**
+     * Изменяем активность
+     * 
+     * @param array $arFields — массив с Кодами значений в порядке сортировки
+     * @param string $FieldCode — код настройки
+     */
+    public static function ChangeSort(array $arFields, string $FieldCode)
+    {
+        $CurrentItems = self::GetPropValues($FieldCode);
+        foreach ($CurrentItems as $arkey => $arItem) {
+            self::update( $arItem['ID'], ['SORT' => array_search($arItem['VALUE_CODE'], $arFields)] );
+        };
+    }
+
+    /**
+     * Устанавливаем настройки по-умолчанию
+     * @param string $FieldCode — код настройки
+     */
+    public static function ResetToDefault( string $FieldCode )
+    {
+        $CurrentItems = self::GetPropValues($FieldCode);
+        foreach ($CurrentItems as $arItem) {
+            self::update($arItem['ID'], [
+                'SORT' => $arItem['DEFAULT_SORT'],
+                'ACTIVITY' => true,
+            ]);
+        }
+
     }
 
 }

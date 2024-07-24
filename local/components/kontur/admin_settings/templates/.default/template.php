@@ -18,6 +18,7 @@
                                 <?endforeach;?>
                                 <input class="SORT" type="hidden" name="<?=$Field['CODE'].'_SORT'?>" value='<?=json_encode($DefaultItems);?>'>
                             </ul>
+                            <a href="?reset_sort=<?=$Field['CODE']?>" class="reset-default">Восстановить по умолчанию</a>
                         </div>
                         <?break;
                 }?>

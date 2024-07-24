@@ -31,6 +31,11 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
     public function saveSettings(){
 
         if( !empty($_REQUEST) ){
+            if( isset($_GET['reset_sort']) && trim($_GET['reset_sort']) != "" ){
+                SettingsOrderFieldTable::ResetToDefault($_GET['reset_sort']);
+                return;
+            }
+
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
                 foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
                     if( strpos($ParamFieldKey, $RequestFieldKey) !== false ) continue;
@@ -41,12 +46,13 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                             if( strpos($RequestFieldKey, '_ACTIVITY') !== false ){
                                 SettingsOrderFieldTable::ChangeActivity($RequestFieldValue, $ParamFieldKey);
                             }
+                            // Сохраняем сортировку
+                            if( strpos($RequestFieldKey, '_SORT') !== false ){
+                                SettingsOrderFieldTable::ChangeSort( json_decode($RequestFieldValue), $ParamFieldKey);
+                            }
 
                             break;
                     }
-
-
-
                 }
             }
         };
@@ -88,11 +94,21 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                 case 'DRAG':
                     $AllItems = SettingsOrderFieldTable::GetPropValues($arItem['CODE']);
                     foreach ($arItem['VALUES'] as $GragValuekey => &$GragValueItem) {
-                        // $this->arResult['SETTINGS'][$arkey]['VALUES'][$GragValuekey]['ACTIVITY']
+                        // Устанавливаем активность
                         $GragValueItem['ACTIVITY'] = array_shift(array_filter($AllItems, function($value) use ($GragValueItem) {
                             return ( $value['VALUE_CODE'] == $GragValueItem['CODE'] );
                         }))['ACTIVITY'];
+
+                        // Устанавливаем сортировку
+                        $GragValueItem['SORT'] = array_shift(array_filter($AllItems, function($value) use ($GragValueItem) {
+                            return ( $value['VALUE_CODE'] == $GragValueItem['CODE'] );
+                        }))['SORT'];
                     }
+
+                    // Сортируем по указанной сортировке
+                    usort($arItem['VALUES'], function ($a, $b) {
+                        return $a['SORT'] <=> $b['SORT'];
+                    });
 
                     break;
             }

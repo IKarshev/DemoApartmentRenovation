@@ -55,6 +55,21 @@
   transform: translateY(-50%);
   margin: 0;
 }
+#Kontur-Core-Settings .draggable-list-container .reset-default {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 10px;
+  text-align: end;
+  font-size: 12px;
+  color: #2d2d2d;
+  text-decoration: none;
+  opacity: 0.6;
+}
+#Kontur-Core-Settings .draggable-list-container .reset-default:hover {
+  transition: 0.3s;
+  opacity: 1;
+}
 #Kontur-Core-Settings .button_container {
   display: flex;
   -moz-column-gap: 24px;

@@ -1,14 +1,11 @@
 $(function(){
-
     function SetDraggableValue(element){
         let i = 1;
         let value_list = [];
         $(element).closest('.draggable-list').find('.draggable-list-item').each(function(){
             $(this).find('.count').html(i);
             i += 1;
-            if( $(this).find('.activity').is(':checked') ){
-                value_list.push($(this).data('count'));
-            }
+            value_list.push($(this).data('count'));
         });
         $(element).closest('.draggable-list').find('input.SORT').val( JSON.stringify(value_list) );
     }
@@ -27,4 +24,13 @@ $(function(){
     $('body').on('change', '.draggable-list-item .activity', function(){
         SetDraggableValue( $(this) );
     });
+
+    $('body').on('click', '.reset-default', function(event){
+        event.preventDefault();
+
+        if( confirm('Вы уверены, что хотите сбросить настройки?') ){
+            window.location.href = event.target.href;
+        };
+    });
+
 });
