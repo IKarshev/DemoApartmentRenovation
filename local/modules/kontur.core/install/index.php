@@ -127,12 +127,21 @@ Class Kontur_Core extends CModule
             true,
             true
         );
+        CopyDirFiles(
+            __DIR__ . '/components',
+            Application::getDocumentRoot() . '/bitrix/components',
+            true,
+            true
+        );
         return true;
     }
 
     function UnInstallFiles(){
         Directory::deleteDirectory(
             Application::getDocumentRoot() . '/bitrix/admin/KonturCoreSettings.php'
+        );
+        Directory::deleteDirectory(
+            Application::getDocumentRoot() . '/bitrix/components/kontur'
         );
         return true;
     }

@@ -1,0 +1,92 @@
+.settigs-container {
+  width: 100%;
+  background-color: #fff;
+}
+
+#Kontur-Core-Settings {
+  padding: 25px 40px;
+  max-width: 400px;
+}
+#Kontur-Core-Settings .input-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.0509803922);
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e3e3e3;
+  border-top: none;
+  padding: 10px 50px 10px 25px;
+  background-color: #fff;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .ghost {
+  opacity: 1;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item:first-child {
+  border-radius: 4px 4px 0 0;
+  border-top: 1px solid #e3e3e3;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .count {
+  display: block;
+  box-sizing: border-box;
+  padding-right: 30px;
+  max-width: 34px;
+  font-weight: 600;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .activity {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+#Kontur-Core-Settings .draggable-list-container .reset-default {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 10px;
+  text-align: end;
+  font-size: 12px;
+  color: #2d2d2d;
+  text-decoration: none;
+  opacity: 0.6;
+}
+#Kontur-Core-Settings .draggable-list-container .reset-default:hover {
+  transition: 0.3s;
+  opacity: 1;
+}
+#Kontur-Core-Settings .button_container {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  margin-top: 42px;
+}
+#Kontur-Core-Settings .button_container button[type=submit] {
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 2px solid #2d2d2d;
+  color: #2d2d2d;
+}
+#Kontur-Core-Settings .button_container button[type=submit]:hover {
+  transition: 0.3s;
+  background-color: #2d2d2d;
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
