@@ -122,7 +122,14 @@ use Bitrix\Main\Page\Asset;
         </div>
     </div>
     <main class="main">
-    <?if( CSite::InDir('/index.php') ) include( $_SERVER['DOCUMENT_ROOT'] . '/index_page.php' );?>
+    <?// if( CSite::InDir('/index.php') ) include( $_SERVER['DOCUMENT_ROOT'] . '/index_page.php' );?>
+    <?$APPLICATION->IncludeComponent(
+        "kontur:constructor",
+        "Landing",
+        Array(
+        )
+    );?>
+    
     <?if( !CSite::InDir('/index.php') ):?>
         <div class="container">
     <?endif;?>
