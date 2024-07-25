@@ -24,7 +24,6 @@ use Bitrix\Main\Page\Asset;
         Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/slick.css" );
         Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/jquery.fancybox.min.css" );
         Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/fonts/Actay/Actay.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/theme.css" );
 
         // JS
         Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/wow.min.js" );

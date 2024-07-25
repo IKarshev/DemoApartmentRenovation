@@ -22,7 +22,12 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
 
     public function configureActions(){
         // сбрасываем фильтры по-умолчанию
-        return [];
+        return [
+            'ResetOption' => [
+                'prefilters' => [],
+                'postfilters' => []
+            ]
+        ];
     }
 
     /**
@@ -38,7 +43,7 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
 
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
                 foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
-                    if( strpos($ParamFieldKey, $RequestFieldKey) !== false ) continue;
+                    if( strpos($ParamFieldKey, $RequestFieldKey) === false ) continue;
 
                     switch ($ParamFieldValue['TYPE']) {
                         case 'DRAG':
@@ -51,6 +56,10 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                                 SettingsOrderFieldTable::ChangeSort( json_decode($RequestFieldValue), $ParamFieldKey);
                             }
 
+                            break;
+                        case 'COLOR':
+                            // Сохраняем цвет
+                            \Bitrix\Main\Config\Option::set('kontur.core', $RequestFieldKey, $RequestFieldValue);
                             break;
                     }
                 }
@@ -109,13 +118,27 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                     usort($arItem['VALUES'], function ($a, $b) {
                         return $a['SORT'] <=> $b['SORT'];
                     });
-
+                    break;
+                case 'COLOR':
+                    $arItem['VALUE'] = \Bitrix\Main\Config\Option::get('kontur.core', $arItem['CODE']);
                     break;
             }
         };
 
-        
         return $this->arResult;
+    }
+
+    public function ResetOptionAction(){
+        $request = Application::getInstance()->getContext()->getRequest();
+        // получаем файлы, post
+        $post = $request->getPostList();
+        $files = $request->getFileList()->toArray();
+        
+        if( isset($post['OPTION_CODE']) && trim($post['OPTION_CODE']) != "" ){
+            $DefaultValue = \Bitrix\Main\Config\Option::delete('kontur.core', ['name' => $post['OPTION_CODE']]);
+        }
+        
+        return true;
     }
 
 }

@@ -21,7 +21,21 @@ CJSCore::Init(array("jquery"));
 	"",
 	Array(
 		"SETTINGS" => [
-
+            "COLOR_PRIMARY" => [
+                'NAME' => 'Основной цвет',
+                'CODE' => 'COLOR_PRIMARY',
+                'TYPE' => 'COLOR',
+            ],
+            "COLOR_SECONDARY" => [
+                'NAME' => 'Второстепенный цвет',
+                'CODE' => 'COLOR_SECONDARY',
+                'TYPE' => 'COLOR',
+            ],
+            "COLOR_MAIN_TEXT" => [
+                'NAME' => 'Основной цвет текста',
+                'CODE' => 'COLOR_MAIN_TEXT',
+                'TYPE' => 'COLOR',
+            ],
             "LANDING_BLOCK_ORDER" => [
                 "NAME" => 'Порядок блоков на главной странице',
                 "CODE" => 'LANDING_BLOCK_ORDER',
