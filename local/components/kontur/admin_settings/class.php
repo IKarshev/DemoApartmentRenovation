@@ -43,7 +43,7 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
 
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
                 foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
-                    if( strpos($ParamFieldKey, $RequestFieldKey) === false ) continue;
+                    if( strpos($RequestFieldKey, $ParamFieldKey) === false ) continue;
 
                     switch ($ParamFieldValue['TYPE']) {
                         case 'DRAG':
