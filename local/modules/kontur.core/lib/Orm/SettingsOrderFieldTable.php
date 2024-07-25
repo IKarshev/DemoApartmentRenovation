@@ -79,8 +79,24 @@ class SettingsOrderFieldTable extends Entity\DataManager{
                 'ACTIVITY' => true,
             ]);
         }
-
     }
+
+    /**
+     * Получаем коды всех активных разделов по сортировке
+     * @param string $FieldCode — код настройки
+     */
+    public static function GetSectionsDispay( string $PropCode )
+    {
+        return array_column(self::getList([
+            'select' => ['VALUE_CODE'],
+            'filter' => [
+                'ACTIVITY' => true,
+                'PROP_CODE' => $PropCode,
+            ],
+            'order' => ['SORT' => 'ASC'],
+        ])->fetchAll(), 'VALUE_CODE');
+    }
+
 
 }
 ?>
