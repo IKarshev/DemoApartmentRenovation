@@ -21,20 +21,25 @@ $aTabs = array(
         "TAB"=> Loc::getMessage("FALBAR_TOTOP_OPTIONS_TAB_NAME"),
         "TITLE" => Loc::getMessage("FALBAR_TOTOP_OPTIONS_TAB_NAME"),
         "OPTIONS" => array(
-            Loc::getMessage("API_SETTINGS"), // Заголовок настроек
+            "GoogleRecaptcha на формах",
             array( // Настройка
-                "test_api",
-                Loc::getMessage("IS_TEST_MODE"),
+                "GoogleRecaptchaActivity",
+                "Активна",
                 "",
                 array("checkbox")
             ),
             array( // Настройка
-                "extEntityId",
-                Loc::getMessage("EXTENTITYID"),
+                "GoogleRecaptchaSiteKey",
+                "Ключ сайта",
                 "",
-                array("text")
+                array("text", 40)
             ),
-            Loc::getMessage("FALBAR_TOTOP_OPTIONS_TAB_APPEARANCE"),
+            array( // Настройка
+                "GoogleRecaptchaSecretKey",
+                "Секретный ключ",
+                "",
+                array("text", 40)
+            ),
         )
     ),
 );

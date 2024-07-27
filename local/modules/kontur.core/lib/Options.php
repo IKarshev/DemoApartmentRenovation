@@ -13,7 +13,7 @@ class Options{
 	
 	function __construct() {
 		$this->options = new \Bitrix\Main\Config\Option();
-		$this->module_id = "ik.multiregional";
+		$this->module_id = "kontur.core";
 	}
 
 	/**

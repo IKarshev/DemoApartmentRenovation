@@ -25,7 +25,7 @@ $(function(){
         SetDraggableValue( $(this) );
     });
 
-    $('body').on('click', '.reset-default', function(event){
+    $('body').on('click', '.reset-default-sort', function(event){
         event.preventDefault();
 
         if( confirm('Вы уверены, что хотите сбросить настройки?') ){
@@ -33,4 +33,22 @@ $(function(){
         };
     });
 
+    $('body').on('click', '.reset-default', function(event){
+        event.preventDefault();
+
+        let OPTION_CODE = $(this).data('prop_code');
+
+        if( confirm('Вы уверены, что хотите сбросить настройки?') ){
+            BX.ajax.runComponentAction('kontur:admin_settings', 'ResetOption', {
+                mode: 'class',
+                data: {
+                    "OPTION_CODE":  OPTION_CODE,
+                },
+            }).then(function(response){
+                window.location.href = event.target.href;
+            });
+        };
+    });
+
+    $('input.color_picker').minicolors();
 });

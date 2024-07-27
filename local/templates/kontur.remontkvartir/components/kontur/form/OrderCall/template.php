@@ -1,5 +1,7 @@
 <?require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_before.php");?>
 
+<!-- <pre><?//print_r( $arParams );?></pre> -->
+
 <?if( $arParams["POPUP"]=="Y" ):?>
     <a href="" class="open_popup" data-popup="Popup_<?=$arResult['form_id']?>"><?=$arParams['POPUP_BTN_TITLE']?></a>
 <?endif;?>
@@ -68,6 +70,12 @@
                     <?break;                    
                 }?>
             <?endforeach;?>
+
+            <pre><?=$arParams['RECAPTCHA_SITE_KEY']?></pre>
+
+            <?if( $arParams["RECAPTCHA"] == "Y" ):?>
+                <script src="https://www.google.com/recaptcha/api.js?render=<?=$arParams['RECAPTCHA_SITE_KEY']?>"></script>
+            <?endif;?>
 
             <div class="error_placement"></div>
             <button class="btn" type="submit">Отправить</button>

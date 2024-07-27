@@ -68,6 +68,12 @@ $arComponentParameters = array(
             "NAME" => "Название формы",
             "TYPE" => "STRING",
         ),
+        "USE_RECAPTCHA" => array(
+            "PARENT" => "BASE",
+            "NAME" => "Использовать ReCaptcha",
+            "TYPE" => "CHECKBOX",
+            "DEFAULT" => "N",
+        ),
         "PROPERTYS" => array(
             "NAME" => "Свойства",
             "TYPE" => "LIST",

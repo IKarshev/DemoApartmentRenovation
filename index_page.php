@@ -594,6 +594,7 @@
 							"PROPERTYS" => array("NAME","PHONE_NUMBER","EMAIL"),
 							"SEND_MAIL" => "N",
 							"POLICE_LINK" => '#',
+							"USE_RECAPTCHA" => \Bitrix\Main\Config\Option::get('kontur.core', 'GoogleRecaptchaActivity'),
 						)
 					);?>
 				</div>

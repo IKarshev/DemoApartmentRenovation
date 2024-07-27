@@ -76,6 +76,9 @@ class KonturFormComponent extends CBitrixComponent implements Controllerable{
 
 
     public function onPrepareComponentParams($arParams){//обработка $arParams (метод подключается автоматически)
+
+        if( $arParams['USE_RECAPTCHA'] ) $arParams['RECAPTCHA_SITE_KEY'] = \Bitrix\Main\Config\Option::get('kontur.core', 'GoogleRecaptchaSiteKey');
+
         $arParams["ERROR_MESSAGES"] = array(
             "FILE" => Loc::getMessage('ERROR_FILE'),
             "STRING" => Loc::getMessage('ERROR_STRING'),
