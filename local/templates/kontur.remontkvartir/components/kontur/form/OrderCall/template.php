@@ -71,10 +71,18 @@
                 }?>
             <?endforeach;?>
 
-            <pre><?=$arParams['RECAPTCHA_SITE_KEY']?></pre>
-
-            <?if( $arParams["RECAPTCHA"] == "Y" ):?>
-                <script src="https://www.google.com/recaptcha/api.js?render=<?=$arParams['RECAPTCHA_SITE_KEY']?>"></script>
+            <?if( $arParams["USE_RECAPTCHA"] == "Y" ):?>
+                <div class="recapcha-container">
+                    <input type="hidden" name="recaptchaResponse" id="recaptchaResponse_<?=$arResult['form_id']?>">
+                    <script>
+                        grecaptcha.ready(function () {
+                            grecaptcha.execute('<?=$arParams['RECAPTCHA_SITE_KEY']?>', { action: 'contact' }).then(function (token) {
+                                var recaptchaResponse = document.getElementById('recaptchaResponse_<?=$arResult['form_id']?>');
+                                recaptchaResponse.value = token;
+                            });
+                        });
+                    </script>
+                </div>
             <?endif;?>
 
             <div class="error_placement"></div>
