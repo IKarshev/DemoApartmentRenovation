@@ -74,6 +74,9 @@
 
     .input_container{
         margin-bottom: 10px;
+        &.FILE{
+            margin-bottom: 24px;
+        }
         .color{
             display: flex;
             flex-direction: row;

@@ -1,6 +1,7 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); 
-use Bitrix\Main\Page\Asset;
+\Bitrix\Main\Loader::includeModule('kontur.core');
+$asset = \Bitrix\Main\Page\Asset::getInstance();
 ?>
 <!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID?>">
@@ -13,26 +14,24 @@ use Bitrix\Main\Page\Asset;
         $APPLICATION->ShowCSS();
         $APPLICATION->ShowHeadStrings();
         $APPLICATION->ShowHeadScripts();
-        $APPLICATION->ShowLink("canonical");
 
         CJSCore::Init(array("jquery"));
-
         // CSS
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/normalize.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/animate.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/slick-theme.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/slick.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/jquery.fancybox.min.css" );
-        Asset::getInstance()->addCss( SITE_TEMPLATE_PATH . "/css/fonts/Actay/Actay.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/normalize.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/animate.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/slick-theme.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/slick.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/jquery.fancybox.min.css" );
+        $asset->addCss( SITE_TEMPLATE_PATH . "/css/fonts/Actay/Actay.css" );
 
         // JS
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/wow.min.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/slick.min.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/main.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/SmoothScroll.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.inputmask.min.js" );
-        Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/jquery.validate.min.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/wow.min.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/slick.min.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/main.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/SmoothScroll.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/jquery.inputmask.min.js" );
+        $asset->addJs( SITE_TEMPLATE_PATH . "/js/jquery.validate.min.js" );
     ?>
 </head>
 <body>
@@ -42,7 +41,7 @@ use Bitrix\Main\Page\Asset;
             <div class="container">
                 <div class="header__box">
                     <a href="/" class="header__logo">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/images/logo.svg" alt="">
+                        <img class="logo_image" src="<?=\konturCore\Helper::GetLogo(SITE_TEMPLATE_PATH.'/images/logo.svg')?>" alt="">
                     </a>
                     <div class="header__wrap">
                         <?$APPLICATION->IncludeComponent(

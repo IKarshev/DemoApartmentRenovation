@@ -21,6 +21,12 @@ CJSCore::Init(array("jquery"));
 	"",
 	Array(
 		"SETTINGS" => [
+            "LOGO" => [
+                'NAME' => 'Логотип',
+                'CODE' => 'LOGO',
+                'TYPE' => 'FILE',
+                'MULTIPLE' => 'N',
+            ],
             "COLOR_PRIMARY" => [
                 'NAME' => 'Основной цвет',
                 'CODE' => 'COLOR_PRIMARY',

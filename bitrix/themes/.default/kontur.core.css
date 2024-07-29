@@ -1,0 +1,6 @@
+.adm-kontur .adm-main-menu-item-icon{
+    background-image: url('/bitrix/themes/.default/icons/kontur.core/admin-img.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}

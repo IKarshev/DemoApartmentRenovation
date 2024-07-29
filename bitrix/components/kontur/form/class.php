@@ -14,8 +14,8 @@ use \Bitrix\Iblock\ElementTable;
 use \Bitrix\Iblock\PropertyTable;
 use konturCore\ReCaptcha;
 
-Loader::includeModule('iblock');
 Loader::includeModule('kontur.core');
+Loader::includeModule('iblock');
 
 class KonturFormComponent extends CBitrixComponent implements Controllerable{
 
@@ -169,7 +169,7 @@ class KonturFormComponent extends CBitrixComponent implements Controllerable{
         $files = $request->getFileList()->toArray();
         // Получаем параметры компонента из сессии
         $this->arParams = $_SESSION['arParams'];
-        
+
         if( $this->arParams['USE_RECAPTCHA'] == 'Y' ){
 
             $recaptcha = new ReCaptcha( \Bitrix\Main\Config\Option::get('kontur.core', 'GoogleRecaptchaSecretKey') );

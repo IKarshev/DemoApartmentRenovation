@@ -51,4 +51,15 @@ $(function(){
     });
 
     $('input.color_picker').minicolors();
+
+
+    // fileinput
+    let link = document.querySelector('.file-selectdialog-switcher');
+    let fileForm = document.querySelector('.file-selectdialog');
+    if (fileForm.style["display"] === 'none'){
+        link.click(); 
+    }
+
+    var inp = BX("newF");
+	BX.adjust(inp, {props: {value: result.element_id}});
 });

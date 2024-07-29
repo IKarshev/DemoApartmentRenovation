@@ -5,9 +5,9 @@ $this->addExternalJS($templateFolder . "/js/sortablejs.min.js");
 ?>
 <?if( !empty($arResult['SETTINGS']) ):?>
     <div class="settigs-container">
-        <form action="" id="Kontur-Core-Settings">
+        <form method="post" action="" id="Kontur-Core-Settings">
             <?foreach ($arResult['SETTINGS'] as $FieldKey => $Field):?>
-                <div class="input_container">
+                <div class="input_container <?=$Field['TYPE']?>">
                     <?switch ($Field['TYPE']) {
                         case 'DRAG':?>
                             <div class="draggable-list-container">
@@ -32,6 +32,26 @@ $this->addExternalJS($templateFolder . "/js/sortablejs.min.js");
                                 <label for="<?=$Field['CODE']?>"><?=$Field['NAME']?></label>
                                 <input name="<?=$Field['CODE']?>" id="<?=$Field['CODE']?>" type="text" class="color_picker" value="<?=$Field['VALUE']?>">
                                 <a href="javascript:void(0);" class="reset-default" data-prop_code="<?=$Field['CODE']?>">Восстановить по-умолчанию</a>
+                            </div>
+                            <?break;
+                        case 'FILE':?>
+                            <div class="file">
+                                <label for="<?=$Field['CODE']?>"><?=$Field['NAME']?></label>
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:main.file.input",
+                                    "drag_n_drop",
+                                    array(
+                                        "INPUT_NAME" => $Field['CODE'],
+                                        "MULTIPLE" => $Field['MULTIPLE'] ?? "N",
+                                        "MODULE_ID" => "kontur.core",
+                                        "MAX_FILE_SIZE" => "",
+                                        "ALLOW_UPLOAD" => "", 
+                                        "ALLOW_UPLOAD_EXT" => "",
+                                        "INPUT_VALUE" => $Field['VALUE'],
+                                    ),
+                                    false
+                                );?>
+
                             </div>
                             <?break;
                     }?>

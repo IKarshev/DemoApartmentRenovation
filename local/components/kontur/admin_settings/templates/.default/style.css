@@ -75,6 +75,9 @@
 #Kontur-Core-Settings .input_container {
   margin-bottom: 10px;
 }
+#Kontur-Core-Settings .input_container.FILE {
+  margin-bottom: 24px;
+}
 #Kontur-Core-Settings .input_container .color {
   display: flex;
   flex-direction: row;

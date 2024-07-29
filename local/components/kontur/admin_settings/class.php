@@ -36,9 +36,16 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
     public function saveSettings(){
 
         if( !empty($_REQUEST) ){
+            // Сбрасываем сортировку по умолчанию
             if( isset($_GET['reset_sort']) && trim($_GET['reset_sort']) != "" ){
                 SettingsOrderFieldTable::ResetToDefault($_GET['reset_sort']);
                 return;
+            }
+
+            // Удаляем файл
+            if( isset($_REQUEST['mfi_mode']) && $_REQUEST['mfi_mode'] == 'delete' ){
+                $Field = str_replace( 'mfi', '', $_REQUEST['controlID']);
+                \Bitrix\Main\Config\Option::delete('kontur.core', ['name' => $Field]);
             }
 
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
@@ -59,6 +66,9 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                             break;
                         case 'COLOR':
                             // Сохраняем цвет
+                            \Bitrix\Main\Config\Option::set('kontur.core', $RequestFieldKey, $RequestFieldValue);
+                            break;
+                        case 'FILE':
                             \Bitrix\Main\Config\Option::set('kontur.core', $RequestFieldKey, $RequestFieldValue);
                             break;
                     }
@@ -122,12 +132,18 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                 case 'COLOR':
                     $arItem['VALUE'] = \Bitrix\Main\Config\Option::get('kontur.core', $arItem['CODE']);
                     break;
+                case 'FILE':
+                    $arItem['VALUE'] = \Bitrix\Main\Config\Option::get('kontur.core', $arItem['CODE']) ?? [];
+                    break;
             }
         };
 
         return $this->arResult;
     }
 
+    /**
+     * Устанавливаем значение по-умолчанию
+     */
     public function ResetOptionAction(){
         $request = Application::getInstance()->getContext()->getRequest();
         // получаем файлы, post

@@ -5,5 +5,6 @@ $kontur_core_default_option = [
     'COLOR_MAIN_TEXT' => "#4E433D",
 
     'GoogleRecaptchaActivity' => "N",
+    'LOGO' => '',
 ];
 ?>

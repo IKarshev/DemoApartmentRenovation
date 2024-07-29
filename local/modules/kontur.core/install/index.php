@@ -133,6 +133,18 @@ Class Kontur_Core extends CModule
             true,
             true
         );
+        CopyDirFiles(
+            __DIR__ . '/assets/admin',
+            Application::getDocumentRoot() . '/bitrix/themes/.default/icons/kontur.core',
+            true,
+            true
+        );
+        CopyDirFiles(
+            __DIR__ . '/themes',
+            Application::getDocumentRoot() . '/bitrix/themes/.default',
+            true,
+            true
+        );
         return true;
     }
 
@@ -142,6 +154,12 @@ Class Kontur_Core extends CModule
         );
         Directory::deleteDirectory(
             Application::getDocumentRoot() . '/bitrix/components/kontur'
+        );
+        Directory::deleteDirectory(
+            Application::getDocumentRoot() . '/bitrix/themes/.default/icons/kontur.core'
+        );
+        Directory::deleteDirectory(
+            Application::getDocumentRoot() . '/bitrix/themes/.default/kontur.core.css'
         );
         return true;
     }
