@@ -35,6 +35,7 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
      */
     public function saveSettings(){
 
+        $repeatCode = [];
         if( !empty($_REQUEST) ){
             // Сбрасываем сортировку по умолчанию
             if( isset($_GET['reset_sort']) && trim($_GET['reset_sort']) != "" ){
@@ -47,6 +48,10 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                 $Field = str_replace( 'mfi', '', $_REQUEST['controlID']);
                 \Bitrix\Main\Config\Option::delete('kontur.core', ['name' => $Field]);
             }
+
+            ob_start();
+            print_r( $_REQUEST );
+            echo "\n--------\n";
 
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
                 foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
@@ -72,8 +77,48 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                             \Bitrix\Main\Config\Option::set('kontur.core', $RequestFieldKey, $RequestFieldValue);
                             break;
                     }
+
+
+                    echo "RequestFieldKey: ".$RequestFieldKey."\n";
+
+                    // Создаем новое значение для DRAG
+                    if( strpos($RequestFieldKey, 'new_') !== false && !in_array($RequestFieldKey, $repeatCode) ){
+                        $FieldCode = str_replace( ['new_','_name', '_code'], '', $RequestFieldKey );
+                        $FieldValueName = $_REQUEST['new_'.$FieldCode.'_name'];
+                        $FieldValueCode = $_REQUEST['new_'.$FieldCode.'_code'];
+    
+                        
+                        foreach ($FieldValueName as $arkey => $arItem) {
+                            $repeatCode[] = $FieldValueName[$arkey];
+                            $repeatCode[] = $FieldValueCode[$arkey];
+
+                            echo "FieldValueName: ".$FieldValueName[$arkey]."\n";
+                            echo "FieldValueCode: ".$FieldValueCode[$arkey]."\n";
+                        }
+
+
+
+                        // print_r([
+                        //     $FieldValueName[$arkey],
+                        //     $FieldCode[$arkey],
+                        //     $FieldValueCode
+                        // ]);
+
+
+    
+                        // SettingsOrderFieldTable::CreateNewElement($FieldValueName, $FieldCode, $FieldValueCode);
+                    }
+
                 }
+
             }
+
+            $debug = ob_get_contents();
+            ob_end_clean();
+            $fp = fopen($_SERVER['DOCUMENT_ROOT'].'/lk-params.log', 'w+');
+            fwrite($fp, $debug);
+            fclose($fp);
+
         };
 
     }

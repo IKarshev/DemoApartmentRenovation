@@ -97,6 +97,25 @@ class SettingsOrderFieldTable extends Entity\DataManager{
         ])->fetchAll(), 'VALUE_CODE');
     }
 
+    /**
+     * Создание нового элемента
+     * 
+     * @param string $Name — наименование
+     * @param string $PropCode — код настройки
+     * @param string $ValueCode — наименование
+     * 
+     */
+    public static function CreateNewElement(string $Name, string $PropCode, string $ValueCode)
+    {
+        self::add([
+            'NAME' => $Name,
+            'PROP_CODE' => $PropCode,
+            'VALUE_CODE' => $ValueCode,
+            'SORT' => 500,
+            'DEFAULT_SORT' => 500,
+            'ACTIVITY' => true,
+        ]);
+    }
 
 }
 ?>

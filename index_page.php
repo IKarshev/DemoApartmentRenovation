@@ -56,7 +56,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("BIG_SLIDER");?>
 
 <?$this->__template->SetViewTarget("ADVANTAGES");?>
 	<?$APPLICATION->IncludeComponent(
@@ -116,7 +116,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("ADVANTAGES");?>
 
 <?$this->__template->SetViewTarget("ABOUT_COMPANY");?>
 	<section class="company">
@@ -229,7 +229,7 @@
 			</div>
 		</div>
 	</section>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("ABOUT_COMPANY");?>
 
 <?$this->__template->SetViewTarget("SERVICES");?>
 	<?$APPLICATION->IncludeComponent(
@@ -299,7 +299,7 @@
 		),
 		false
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("SERVICES");?>
 
 <?$this->__template->SetViewTarget("DESIGN_PROJECT");?>
 	<?$APPLICATION->IncludeComponent(
@@ -364,7 +364,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("DESIGN_PROJECT");?>
 
 <?$this->__template->SetViewTarget("OUT_WORKS");?>
 	<?$APPLICATION->IncludeComponent(
@@ -429,7 +429,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("OUT_WORKS");?>
 
 <?$this->__template->SetViewTarget("VIDEO_REVIEWS");?>
 	<?$APPLICATION->IncludeComponent(
@@ -494,7 +494,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("VIDEO_REVIEWS");?>
 
 <?$this->__template->SetViewTarget("SALES");?>
 	<?$APPLICATION->IncludeComponent(
@@ -559,7 +559,7 @@
 			"STRICT_SECTION_CHECK" => "N"
 		)
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("SALES");?>
 
 <?$this->__template->SetViewTarget("FEEDBACK");?>
 	<div class="consultation_wrap">
@@ -602,7 +602,7 @@
 			</div>
 		</section>
 	</div>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("FEEDBACK");?>
 
 <?$this->__template->SetViewTarget("REVIEWS");?>
 	<?$APPLICATION->IncludeComponent(
@@ -670,7 +670,7 @@
 		),
 		false
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("REVIEWS");?>
 
 <?$this->__template->SetViewTarget("WORK_OPTIONS");?>
 	<?$APPLICATION->IncludeComponent(
@@ -735,4 +735,4 @@
 		),
 		false
 	);?>
-<?$this->__template->EndViewTarget();?>
+<?$this->__template->EndViewTarget("WORK_OPTIONS");?>

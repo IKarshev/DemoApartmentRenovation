@@ -13,7 +13,7 @@
   margin-bottom: 10px;
 }
 #Kontur-Core-Settings .draggable-list-container {
-  max-width: 400px;
+  max-width: 600px;
 }
 #Kontur-Core-Settings .draggable-list-container .draggable-list {
   padding: 0;
@@ -32,6 +32,25 @@
   border-top: none;
   padding: 10px 50px 10px 25px;
   background-color: #fff;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item.add_new_section {
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item.add_new_section .add_new_section-btn {
+  display: block;
+  box-sizing: border-box;
+  text-align: end;
+  font-size: 12px;
+  color: #2d2d2d;
+  text-decoration: none;
+  opacity: 0.6;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item.add_new_section .add_new_section-btn:hover {
+  transition: 0.3s;
+  opacity: 1;
 }
 #Kontur-Core-Settings .draggable-list-container .draggable-list-item .ghost {
   opacity: 1;
@@ -42,6 +61,10 @@
 }
 #Kontur-Core-Settings .draggable-list-container .draggable-list-item:last-child {
   border-radius: 0 0 4px 4px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .name,
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .code {
+  width: 200px;
 }
 #Kontur-Core-Settings .draggable-list-container .draggable-list-item .count {
   display: block;
@@ -56,6 +79,16 @@
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele_item {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele_item:hover {
+  transform: translateY(-50%) scale(1.1);
+  transition: 0.3s;
 }
 #Kontur-Core-Settings .draggable-list-container .reset-default-sort {
   display: block;

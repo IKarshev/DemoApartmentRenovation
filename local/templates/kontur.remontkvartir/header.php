@@ -121,12 +121,13 @@ $asset = \Bitrix\Main\Page\Asset::getInstance();
         </div>
     </div>
     <main class="main">
-    <?// if( CSite::InDir('/index.php') ) include( $_SERVER['DOCUMENT_ROOT'] . '/index_page.php' );?>
     <?$APPLICATION->IncludeComponent(
         "kontur:constructor",
         "Landing",
         Array(
-        )
+        ),
+        false,
+        ["HIDE_ICONS"=>"Y"]
     );?>
     
     <?if( !CSite::InDir('/index.php') ):?>
