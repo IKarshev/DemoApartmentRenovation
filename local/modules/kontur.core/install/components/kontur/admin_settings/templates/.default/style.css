@@ -80,13 +80,13 @@
   transform: translateY(-50%);
   margin: 0;
 }
-#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele_item {
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele-draggable-item {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
 }
-#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele_item:hover {
+#Kontur-Core-Settings .draggable-list-container .draggable-list-item .detele-draggable-item:hover {
   transform: translateY(-50%) scale(1.1);
   transition: 0.3s;
 }

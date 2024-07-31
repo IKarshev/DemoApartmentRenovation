@@ -35,6 +35,14 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
      */
     public function saveSettings(){
 
+        ob_start();
+        print_r($_REQUEST);
+        $debug = ob_get_contents();
+        ob_end_clean();
+        $fp = fopen($_SERVER['DOCUMENT_ROOT'].'/lk-params2.log', 'w+');
+        fwrite($fp, $debug);
+        fclose($fp);
+
         $repeatCode = [];
         if( !empty($_REQUEST) ){
             // Сбрасываем сортировку по умолчанию
@@ -48,10 +56,6 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                 $Field = str_replace( 'mfi', '', $_REQUEST['controlID']);
                 \Bitrix\Main\Config\Option::delete('kontur.core', ['name' => $Field]);
             }
-
-            ob_start();
-            print_r( $_REQUEST );
-            echo "\n--------\n";
 
             foreach ($this->arParams['SETTINGS'] as $ParamFieldKey => $ParamFieldValue) {
                 foreach ($_REQUEST as $RequestFieldKey => $RequestFieldValue) {
@@ -78,47 +82,25 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                             break;
                     }
 
-
-                    echo "RequestFieldKey: ".$RequestFieldKey."\n";
-
                     // Создаем новое значение для DRAG
                     if( strpos($RequestFieldKey, 'new_') !== false && !in_array($RequestFieldKey, $repeatCode) ){
                         $FieldCode = str_replace( ['new_','_name', '_code'], '', $RequestFieldKey );
                         $FieldValueName = $_REQUEST['new_'.$FieldCode.'_name'];
                         $FieldValueCode = $_REQUEST['new_'.$FieldCode.'_code'];
-    
+                        $repeatCode = array_merge($repeatCode, [
+                            'new_'.$FieldCode.'_name',
+                            'new_'.$FieldCode.'_code'
+                        ]);
                         
                         foreach ($FieldValueName as $arkey => $arItem) {
-                            $repeatCode[] = $FieldValueName[$arkey];
-                            $repeatCode[] = $FieldValueCode[$arkey];
-
-                            echo "FieldValueName: ".$FieldValueName[$arkey]."\n";
-                            echo "FieldValueCode: ".$FieldValueCode[$arkey]."\n";
+                            SettingsOrderFieldTable::CreateNewElement($FieldCode, $FieldValueName[$arkey], $FieldValueCode[$arkey]);
                         }
 
-
-
-                        // print_r([
-                        //     $FieldValueName[$arkey],
-                        //     $FieldCode[$arkey],
-                        //     $FieldValueCode
-                        // ]);
-
-
-    
-                        // SettingsOrderFieldTable::CreateNewElement($FieldValueName, $FieldCode, $FieldValueCode);
                     }
 
                 }
 
             }
-
-            $debug = ob_get_contents();
-            ob_end_clean();
-            $fp = fopen($_SERVER['DOCUMENT_ROOT'].'/lk-params.log', 'w+');
-            fwrite($fp, $debug);
-            fclose($fp);
-
         };
 
     }
@@ -157,6 +139,10 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
             switch ($arItem['TYPE']) {
                 case 'DRAG':
                     $AllItems = SettingsOrderFieldTable::GetPropValues($arItem['CODE']);
+                    $arItem['VALUES'] = $AllItems;
+
+
+                    /* 
                     foreach ($arItem['VALUES'] as $GragValuekey => &$GragValueItem) {
                         // Устанавливаем активность
                         $GragValueItem['ACTIVITY'] = array_shift(array_filter($AllItems, function($value) use ($GragValueItem) {
@@ -168,6 +154,7 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
                             return ( $value['VALUE_CODE'] == $GragValueItem['CODE'] );
                         }))['SORT'];
                     }
+                    */
 
                     // Сортируем по указанной сортировке
                     usort($arItem['VALUES'], function ($a, $b) {
@@ -202,4 +189,19 @@ class KonturAdminSettings extends CBitrixComponent implements Controllerable{
         return true;
     }
 
+    /**
+     * Устанавливаем значение по-умолчанию
+     */
+    public function DeleteDraggableItemAction(){
+        $request = Application::getInstance()->getContext()->getRequest();
+        // получаем файлы, post
+        $post = $request->getPostList();
+        $files = $request->getFileList()->toArray();
+        
+        if( isset($post['PROPERTY_ID']) && trim($post['PROPERTY_ID'])!="" ){
+            SettingsOrderFieldTable::delete( (int) $post['PROPERTY_ID'] );
+        }
+        
+        return true;
+    }
 }

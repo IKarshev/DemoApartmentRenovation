@@ -46,6 +46,7 @@ CJSCore::Init(array("jquery"));
                 "NAME" => 'Порядок блоков на главной странице',
                 "CODE" => 'LANDING_BLOCK_ORDER',
                 "TYPE" => 'DRAG',
+                /*
                 "VALUES" => [
                     [
                         "NAME" => "Большой слайдер",
@@ -92,6 +93,7 @@ CJSCore::Init(array("jquery"));
                         "CODE" => "WORK_OPTIONS",
                     ],
                 ],
+                */
             ],
 
         ],

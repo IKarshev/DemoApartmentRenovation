@@ -100,12 +100,12 @@ class SettingsOrderFieldTable extends Entity\DataManager{
     /**
      * Создание нового элемента
      * 
-     * @param string $Name — наименование
      * @param string $PropCode — код настройки
-     * @param string $ValueCode — наименование
+     * @param string $Name — наименование блока
+     * @param string $ValueCode — символьный код блока
      * 
      */
-    public static function CreateNewElement(string $Name, string $PropCode, string $ValueCode)
+    public static function CreateNewElement(string $PropCode, string $Name, string $ValueCode)
     {
         self::add([
             'NAME' => $Name,
