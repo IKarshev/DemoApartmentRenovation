@@ -564,6 +564,17 @@
 <?$this->__template->SetViewTarget("FEEDBACK");?>
 	<div class="consultation_wrap">
 		<section class="consultation">
+
+			<?$APPLICATION->IncludeFile(
+				'/include/consultation_img.php',
+				[],
+				[
+					'MODE'      => 'html',
+					'NAME'      => 'Фото на заднем плане',
+					'TEMPLATE'  => 'page_inc.php'
+				],
+			);?>
+
 			<div class="consultation__box">
 				<div class="consultation__left wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
 					
