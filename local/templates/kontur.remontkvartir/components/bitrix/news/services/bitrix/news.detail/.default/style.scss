@@ -1,0 +1,145 @@
+$container-width1: 1600px;
+$container-width2: 768px;
+
+.service-detail{
+    .block-title{
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 125%;
+        color: var(--color-main-text);
+        margin-bottom: 30px;
+    }
+    .main-info{
+        display: flex;
+        align-items: stretch;
+        column-gap: 60px;
+        min-height: 500px;
+        margin-bottom: 100px;
+        @media( max-width: $container-width1 ){
+            column-gap: 40px;
+        }
+        @media( max-width: $container-width2 ){
+            flex-direction: column;
+            row-gap: 24px;
+        }
+        .img_container{
+            width: 35%;
+            max-width: 622px;
+            min-width: 350px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            @media( max-width: $container-width2 ){
+                width: 100%;
+                min-width: unset;
+                max-width: unset;
+            }
+        }
+        &:not(:has(.img_container)){
+            min-height: unset;
+            .info_container{
+                width: 100%;
+                padding: 0;
+            }
+        } 
+        .info_container{
+            width: 65%;
+            padding: 60px 0;
+            *{
+                color: var(--color-main-text);
+                font-size: 18px;
+                line-height: 150%;
+            }
+            @media( max-width: $container-width2 ){
+                width: 100%;
+                padding: 0;
+                *{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .tariffs{
+        .slider-container{
+            .slick-list{
+                margin: 0 -15px;
+            }
+            .slick-track{
+                display: flex;
+                align-items: stretch;
+            }
+            .slick-slide{
+                display: flex;
+                flex-direction: row;
+                padding: 0 15px;
+                .img-block{
+                    width: 40%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .info-block{
+                    width: 60%;
+                    padding: 20px 40px;
+                    background-color: #fff;
+                    .price{
+                        font-size: 26px;
+                        font-weight: 700;
+                        line-height: 125%;
+                        color: var(--color-main-text);
+                        margin-bottom: 8px;
+                    }
+                    .title{
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 150%;
+                        color: var(--color-main-text);
+                        margin-bottom: 30px;
+                    }
+                }
+                .order-call-btn-container{
+                    display: flex;
+                    justify-content: center;
+                    .order-call-btn{
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+    }
+    .recommendations{
+        margin-top: 40px;
+        &-title{
+            opacity: .5;
+            margin-bottom: 10px;
+        }
+        &-list{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+            li{
+                padding-left: 18px;
+                position: relative;
+                &::before{
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: var(--color-primary);
+                }
+            }
+        }
+    }
+}

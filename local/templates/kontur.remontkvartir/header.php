@@ -132,4 +132,16 @@ $asset = \Bitrix\Main\Page\Asset::getInstance();
     
     <?if( !CSite::InDir('/index.php') ):?>
         <div class="container">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:breadcrumb",
+                ".default",
+                Array(
+                    "PATH" => "",
+                    "SITE_ID" => "",
+                    "START_FROM" => "0"
+                )
+            );?>
+
+            <h1 class="main-title"><?=$APPLICATION->ShowTitle(false)?></h1>
+
     <?endif;?>

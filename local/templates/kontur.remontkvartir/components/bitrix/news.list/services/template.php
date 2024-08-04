@@ -30,7 +30,7 @@
                         </div>
                         <div class="bottom">
                             <button class="btn open_modal"><?=GetMessage('ORDER_CALL');?></button>
-                            <a href="#" class="link"><?=GetMessage('MORE_DETAILED');?></a>
+                            <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="link"><?=GetMessage('MORE_DETAILED');?></a>
                         </div>
                     </div>
 

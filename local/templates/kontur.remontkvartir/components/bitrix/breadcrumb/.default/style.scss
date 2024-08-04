@@ -1,0 +1,61 @@
+.bx-breadcrumb{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar{ width: 0; }
+    &{ -ms-overflow-style: none; }
+    &{ overflow: -moz-scrollbars-none; }
+    
+    .bx-breadcrumb-item{
+        position: relative;
+        padding-right: 18px;
+        margin-right: 6px;
+        a{
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 125%;
+            font-weight: 400;
+            color: var(--color-main-text);
+            white-space: nowrap;
+            span{
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                font-weight: inherit;
+            }
+            &:hover{
+                transition: .3s;
+                color: var(--color-primary);
+            }
+        }
+        span{
+            font-size: 14px;
+            line-height: 125%;
+            font-weight: 600;
+            color: var(--color-main-text);
+            white-space: nowrap;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            width: 14px;
+            height: 14px;
+            background-image: url('./images/breadcrumb-item-icon.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transform: translateY(-50%);
+        }
+        &:last-child{
+            padding-right: 0;
+            margin-right: 0;
+            &::after{
+                content: none;
+            }
+        }
+    }
+}
