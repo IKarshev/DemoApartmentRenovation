@@ -143,5 +143,10 @@ $asset = \Bitrix\Main\Page\Asset::getInstance();
             );?>
 
             <h1 class="main-title"><?=$APPLICATION->ShowTitle(false)?></h1>
+        </div>
+
+        <?if( $APPLICATION->GetDirProperty('FullWidth')!=="Y" ):?>
+            <div class="container">
+        <?endif;?>
 
     <?endif;?>

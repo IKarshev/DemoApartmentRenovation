@@ -12,7 +12,7 @@
             </div>
         </section>
         
-        <?if( !CSite::InDir('/index.php') ):?>
+        <?if( !CSite::InDir('/index.php') && $APPLICATION->GetDirProperty('FullWidth')!=='Y' ):?>
             </div>
         <?endif;?>
     </main>
