@@ -64,7 +64,7 @@
                     case "TEXT_AREA"?>
                         
                         <div class="input <?=$arItem["PROPERTY_TYPE"];?>">
-                            <textarea id="<?=$arItem["CODE"]?>" <?=($arItem["IS_REQUIRED"]=='Y')?"required":""?> data-mask="<?=$arItem["MASK"]?>" name="<?=$arItem["CODE"]?>" type="text" placeholder="Введите <?=$arItem["PLACEHOLDER"]?>"></textarea>
+                            <textarea id="<?=$arItem["CODE"]?>" <?=($arItem["IS_REQUIRED"]=='Y')?"required":""?> data-mask="<?=$arItem["MASK"]?>" name="<?=$arItem["CODE"]?>" type="text" placeholder="<?=$arItem["PLACEHOLDER"]?>"></textarea>
                         </div>      
             
                     <?break;                    
@@ -92,7 +92,6 @@
                     '#POLICE_LINK#' => $arParams['POLICE_LINK'],
                 ])?>
             </p>
-
             <input type="hidden" name="FORM_ID" value="<?=$arResult["form_id"]?>">
         </form>
     </div>

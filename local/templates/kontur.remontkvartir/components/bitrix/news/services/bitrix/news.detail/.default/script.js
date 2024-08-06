@@ -27,4 +27,21 @@ $(function(){
             }
         ]
     })
+
+    $('body').on('click', '.work-stages .stage-btn', function(event){
+        event.preventDefault()
+
+        $('.work-stages .stage-btn').removeClass('active');
+        $(this).addClass('active');
+
+        let stage_count = $(this).data('stage_count');
+        $('.stages-container .stage').each(function(){
+            if( $(this).data('stage_count') == stage_count ){
+                $(this).addClass('active');
+            }else{
+                $(this).removeClass('active');
+            }
+        });
+    })
+
 });

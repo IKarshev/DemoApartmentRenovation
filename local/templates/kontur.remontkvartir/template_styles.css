@@ -1432,7 +1432,8 @@ main > .container{
 .consultation__form .input {
   margin-bottom: 15px;
 }
-.consultation__form .input input {
+.consultation__form .input input,
+.consultation__form .input textarea {
   width: 100%;
   height: 69px;
   border: 1px solid #E8EBEE;
@@ -1443,22 +1444,32 @@ main > .container{
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.consultation__form .input textarea{
+  resize: none;
+  min-height: 150px;
+  padding-top: 18px;
+}
 .consultation__form .input input:focus {
   border: 1px solid var(--color-primary);
 }
-.consultation__form .input input::-webkit-input-placeholder {
+.consultation__form .input input::-webkit-input-placeholder,
+.consultation__form textarea::-webkit-input-placeholder {
   color: #B2ADAB;
 }
-.consultation__form .input input::-moz-placeholder {
+.consultation__form .input input::-moz-placeholder,
+.consultation__form textarea::-moz-placeholder {
   color: #B2ADAB;
 }
-.consultation__form .input input:-ms-input-placeholder {
+.consultation__form .input input:-ms-input-placeholder,
+.consultation__form textarea:-ms-input-placeholder {
   color: #B2ADAB;
 }
-.consultation__form .input input::-ms-input-placeholder {
+.consultation__form .input input::-ms-input-placeholder,
+.consultation__form textarea::-ms-input-placeholder {
   color: #B2ADAB;
 }
-.consultation__form .input input::placeholder {
+.consultation__form .input input::placeholder,
+.consultation__form textarea::placeholder{
   color: #B2ADAB;
 }
 .consultation__form .btn {
@@ -2142,8 +2153,13 @@ main > .container{
   }
 }
 @media screen and (max-width: 768px) {
+  .slider-navigation .arrow{
+    width: 50px;
+    height: 50px;
+  }
   .main-title{
     font-size: 26px;
+    margin-bottom: 24px;
   }
   .consultation__form{
     width: 100%;

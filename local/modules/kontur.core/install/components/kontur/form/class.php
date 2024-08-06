@@ -96,7 +96,7 @@ class KonturFormComponent extends CBitrixComponent implements Controllerable{
         // Формируем массив arResult
         $this->arResult["form_id"] = $this->form_id;
         // Передаем параметры в сессию, чтобы получить иметь доступ в ajax
-        $_SESSION['arParams'] = $this->arParams;
+        $_SESSION['FORM'][$this->form_id]['arParams'] = $this->arParams;
   
         $PropTypeList = array(
             "S" => "STRING",
@@ -168,7 +168,8 @@ class KonturFormComponent extends CBitrixComponent implements Controllerable{
         $post = $request->getPostList();
         $files = $request->getFileList()->toArray();
         // Получаем параметры компонента из сессии
-        $this->arParams = $_SESSION['arParams'];
+        // $this->arParams = $_SESSION['arParams'];
+        $this->arParams = $_SESSION['FORM'][$post['FORM_ID']]['arParams'];
 
         if( $this->arParams['USE_RECAPTCHA'] == 'Y' ){
 

@@ -1,3 +1,7 @@
+$container-width1: 1600px;
+$container-width2: 768px;
+$container-width3: 500px;
+
 .bx-breadcrumb{
     display: flex;
     flex-direction: row;
@@ -8,6 +12,10 @@
     &{ -ms-overflow-style: none; }
     &{ overflow: -moz-scrollbars-none; }
     
+    @media( max-width: $container-width1 ){
+        margin-bottom: 0;
+    }
+
     .bx-breadcrumb-item{
         position: relative;
         padding-right: 18px;

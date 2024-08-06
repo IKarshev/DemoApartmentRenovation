@@ -1,6 +1,6 @@
 <?
+// Получаем тарифы
 if( isset($arResult['DISPLAY_PROPERTIES']['TARIFFS']['LINK_ELEMENT_VALUE']) && !empty($arResult['DISPLAY_PROPERTIES']['TARIFFS']['LINK_ELEMENT_VALUE']) ){
-    
     foreach ($arResult['DISPLAY_PROPERTIES']['TARIFFS']['LINK_ELEMENT_VALUE'] as $arkey => $arItem) {
         $IblockClass = \Bitrix\Iblock\Iblock::wakeUp($arItem['IBLOCK_ID'])->getEntityDataClass();
         if (class_exists($IblockClass)){
@@ -28,6 +28,25 @@ if( isset($arResult['DISPLAY_PROPERTIES']['TARIFFS']['LINK_ELEMENT_VALUE']) && !
                     }
                 }
             };
+        }
+    }
+}
+
+// Этапы работы
+if( isset($arResult['DISPLAY_PROPERTIES']['WORK_STAGES']['LINK_ELEMENT_VALUE']) && !empty($arResult['DISPLAY_PROPERTIES']['WORK_STAGES']['LINK_ELEMENT_VALUE']) ){
+    foreach ($arResult['DISPLAY_PROPERTIES']['WORK_STAGES']['LINK_ELEMENT_VALUE'] as $arkey => $arItem) {
+        $IblockClass = \Bitrix\Iblock\Iblock::wakeUp($arItem['IBLOCK_ID'])->getEntityDataClass();
+        if (class_exists($IblockClass)){
+            $elements = call_user_func( [$IblockClass, 'getByPrimary'], $arItem['ID'], [
+                'select' => [
+                    'ID',
+                    'NAME',
+                    'PREVIEW_PICTURE',
+                    'PREVIEW_TEXT',
+                ],
+            ])->fetchAll();
+
+            $arResult['DISPLAY_PROPERTIES']['WORK_STAGES']['LINK_ELEMENT_VALUE'][$arkey]['PREVIEW_TEXT'] = $elements[0]['PREVIEW_TEXT'];
         }
     }
 }
