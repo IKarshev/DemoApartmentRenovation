@@ -521,6 +521,11 @@
          column-gap: 24px;
   }
 }
+@media (max-width: 768px) {
+  .service-detail .work-stages .stage-list-container .stages-container .stage {
+    padding: 20px;
+  }
+}
 @media (max-width: 860px) {
   .service-detail .work-stages .stage-list-container {
     flex-direction: column;

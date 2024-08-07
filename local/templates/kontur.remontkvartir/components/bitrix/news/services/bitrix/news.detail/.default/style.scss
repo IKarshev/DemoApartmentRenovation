@@ -459,6 +459,9 @@ $container-width3: 500px;
                         padding: 25px 50px;
                         column-gap: 24px;
                     }
+                    @media( max-width: $container-width2 ){
+                        padding: 20px;
+                    }
                 }
             }
             @media( max-width: 860px ){
