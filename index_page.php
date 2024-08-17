@@ -609,7 +609,18 @@
 						)
 					);?>
 				</div>
-				<img src="<?=SITE_TEMPLATE_PATH?>/images/iphone.png" alt="" class="iphone">
+				<div class="iphone">
+					<img class="iphone-frame" src="<?=SITE_TEMPLATE_PATH?>/images/iphone.png" alt="">
+					<?$APPLICATION->IncludeFile(
+						'/include/iphone_img.php',
+						[],
+						[
+							'MODE'      => 'html',
+							'NAME'      => 'Фото в телефоне',
+							'TEMPLATE'  => 'page_inc.php'
+						]
+					);?>
+				</div>
 			</div>
 		</section>
 	</div>
