@@ -1,6 +1,6 @@
 $(function(){
     $('.our_work__slider').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -16,7 +16,7 @@ $(function(){
 
     if (window.innerWidth < 768) {
         $('.our_work__grid').slick({
-            infinite: true,
+            infinite: false,
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: false,

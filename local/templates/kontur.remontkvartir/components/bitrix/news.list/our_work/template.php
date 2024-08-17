@@ -12,7 +12,7 @@
                     <?if( !empty($arItem['PROPERTIES']['PHOTO']['VALUE']) ):?>
                         <div id="<?=$this->GetEditAreaID($arItem['ID'])?>" class="our_work__grid">
                             <?foreach ($arItem['PROPERTIES']['PHOTO']['VALUE'] as $PhotoKey => $PhotoItem):?>
-                                <a href="<?=\CFile::GetPath($PhotoItem);?>" data-fancybox="gal" class="our_work__block block<?=$PhotoKey+1;?>">
+                                <a href="<?=\CFile::GetPath($PhotoItem);?>" data-fancybox="our_work" class="our_work__block block<?=$PhotoKey+1;?>">
                                     <img src="<?=\CFile::ResizeImageGet($PhotoItem, array('width'=>357, 'height'=>430), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true)['src'];?>" alt="">
                                 </a>
                             <?endforeach;?>
@@ -26,7 +26,7 @@
                 <div class="our_work__grid">
                     <?foreach ($arResult['ITEMS'] as $arkey => $arItem):?>
                         <?foreach ($arItem['PROPERTIES']['PHOTO']['VALUE'] as $PhotoKey => $PhotoItem):?>
-                            <a href="<?=\CFile::GetPath($PhotoItem);?>" data-fancybox="gal" class="our_work__block block<?=$PhotoKey+1;?>?>">
+                            <a href="<?=\CFile::GetPath($PhotoItem);?>" data-fancybox="our_work_mobile" class="our_work__block block<?=$PhotoKey+1;?>?>">
                                 <img src="<?=\CFile::ResizeImageGet($PhotoItem, array('width'=>900, 'height'=>600), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true)['src'];?>" alt="">
                             </a>
                         <?endforeach;?>

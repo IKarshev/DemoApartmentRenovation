@@ -57,7 +57,7 @@ $asset = \Bitrix\Main\Page\Asset::getInstance();
                                 "MENU_CACHE_TYPE" => "N",
                                 "MENU_CACHE_USE_GROUPS" => "Y",
                                 "ROOT_MENU_TYPE" => "top",
-                                "USE_EXT" => "N"
+                                "USE_EXT" => "Y"
                             )
                         );?>
                         <div class="header__right">

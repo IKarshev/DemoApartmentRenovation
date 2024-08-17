@@ -6,6 +6,12 @@
           box-sizing: border-box;
 }
 
+:root{
+  --container-width1: 1600px;
+  --container-width2: 768px;
+  --container-width3: 500px;
+}
+
 body {
   max-width: 2000px;
   width: 100%;
