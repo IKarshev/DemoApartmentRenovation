@@ -1,0 +1,37 @@
+#ajax_next_page{
+    position: relative;
+    margin: 0 auto;
+    width: max-content;
+    white-space: nowrap;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 14px 24px 10px 44px;
+    background-color: rgba(#fff, .55);
+    color: #2d2d2d;
+    border-radius: 8px;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url('./images/reload.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        animation: rotate 2s linear infinite; /* Применение анимации */
+    }
+    @keyframes rotate {
+        from {
+            transform: translateY(-50%) rotate(0deg); /* Начальная позиция */
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg); /* Конечная позиция */
+        }
+    }
+}
